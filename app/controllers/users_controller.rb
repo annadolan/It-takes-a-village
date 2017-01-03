@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only: [:show, :edit, :update]
+
+  def show
+
+  end
+
   def new
     @user = User.new
     @categories = Category.all
@@ -18,25 +24,39 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
+  def edit
+    
+  end
+
+  def update
+    if @user.save
+      flash[:success] = "#{@user.first_name} account updated!"
+      redirect_to user_path(@user)
+    else
+      flash[:error] = "Account didn't update. Try again."
+      render :edit
+    end
   end
 
   private
 
-  def user_params
-    params.require(:user).permit(:first_name,
-                                 :last_name,
-                                 :street_number,
-                                 :unit_number,
-                                 :city,
-                                 :state,
-                                 :zip_code,
-                                 :phone,
-                                 :email,
-                                 :password,
-                                 :password_confirmation,
-                                 :picture)
-  end
+    def user_params
+      params.require(:user).permit(:first_name,
+                                   :last_name,
+                                   :street_number,
+                                   :unit_number,
+                                   :city,
+                                   :state,
+                                   :zip_code,
+                                   :phone,
+                                   :email,
+                                   :password,
+                                   :password_confirmation,
+                                   :picture)
+    end
+
+    def set_user
+      @user = User.find(params[:id])
+    end
 
 end
