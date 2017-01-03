@@ -13,7 +13,4 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
-.hello {
-  color: red;
-}
+ @import "navbar.scss";
