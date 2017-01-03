@@ -6,9 +6,9 @@ describe "Visit root page" do
 
       visit root_path
 
-      expect(page).to have_link("Sign Up")
+      expect(page).to have_link("SIGN UP")
 
-      click_on "Sign Up"
+      click_on "SIGN UP"
 
       expect(current_path).to eq(new_user_path)
       expect(page).to have_content("Create Your New Account and Help a Friend")

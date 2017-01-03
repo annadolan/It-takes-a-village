@@ -23,7 +23,8 @@ Create Your New Account and Help a Friend
 <%= f.text_field :zip_code, placeholder: "**REQUIRED**" %>
 
 <%= f.label "Phone Number" %>
-<%= f.text_field :phone, placeholder: "**REQUIRED**" %>
+<%= f.text_field number_to_phone(:phone), placeholder: "555-555-5555" %>
+<%#= f.text_field :phone, placeholder: "**REQUIRED**" %>
 
 <%= f.label "Email" %>
 <%= f.text_field :email, placeholder: "**REQUIRED**" %>
