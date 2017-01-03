@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
@@ -53,6 +53,7 @@ class UsersController < ApplicationController
                                    :password,
                                    :password_confirmation,
                                    :picture)
+      #took out category_id here, will have to add in when we put this functionality back in
     end
 
     def set_user
