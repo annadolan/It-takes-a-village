@@ -37,7 +37,7 @@ Create Your New Account and Help a Friend
 <%= f.label "A Picture of You" %>
 <%= f.text_field :picture, placeholder: "**REQUIRED**" %>
 
-<%= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
+<%#= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
 
 <%= f.submit "Create Account!" %>
 <% end %>
