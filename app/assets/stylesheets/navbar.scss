@@ -1,0 +1,22 @@
+.navbar {
+  background-color: white;
+  // border-bottom: none;
+  font-family: 'Muli', sans-serif;
+  height: 65px;
+  padding-top: 7px;
+}
+
+
+
+.navbar-nav a:hover {
+  color: #c1bda8 !important;
+}
+
+.navbar-brand {
+  color: black !important;
+  font-size: 1.5em;
+}
+
+.dropdown-menu a:hover {
+  color: black !important;
+}

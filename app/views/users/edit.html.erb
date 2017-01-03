@@ -1,4 +1,4 @@
-Create Your New Account and Help a Friend
+Update your account
 
 <%= form_for @user do |f| %>
 <%= f.label "First Name" %>
@@ -23,8 +23,7 @@ Create Your New Account and Help a Friend
 <%= f.text_field :zip_code, placeholder: "**REQUIRED**" %>
 
 <%= f.label "Phone Number" %>
-<%= f.text_field number_to_phone(:phone), placeholder: "555-555-5555" %>
-<%#= f.text_field :phone, placeholder: "**REQUIRED**" %>
+<%= f.text_field :phone, placeholder: "**REQUIRED**" %>
 
 <%= f.label "Email" %>
 <%= f.text_field :email, placeholder: "**REQUIRED**" %>
@@ -40,5 +39,5 @@ Create Your New Account and Help a Friend
 
 <%#= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
 
-<%= f.submit "Create Account!" %>
+<%= f.submit "Update Account" %>
 <% end %>

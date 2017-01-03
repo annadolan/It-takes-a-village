@@ -4,7 +4,7 @@ describe "Visit new uer path" do
   context "guest sees fields to create account" do
     scenario "creates new account" do
 
-      cat_1, cat_2 = create_list(:category, 2)
+      # cat_1, cat_2 = create_list(:category, 2)
       user = build(:user)
 
       visit new_user_path
@@ -21,7 +21,7 @@ describe "Visit new uer path" do
       fill_in "user[password]", with: user.password
       fill_in "user[password_confirmation]", with: user.password
       fill_in "user[picture]", with: user.picture
-      select("#{cat_1.name}", from: 'user[category_id]')
+      # select("#{cat_1.name}", from: 'user[category_id]')
 
       click_on "Create Account!"
 
@@ -31,7 +31,7 @@ describe "Visit new uer path" do
 
     scenario "Must enter required info or is shown sign up page again" do
 
-      cat_1, cat_2 = create_list(:category, 2)
+      # cat_1, cat_2 = create_list(:category, 2)
       user = build(:user)
 
       visit new_user_path
@@ -47,7 +47,7 @@ describe "Visit new uer path" do
       fill_in "user[password]", with: user.password
       fill_in "user[password_confirmation]", with: user.password
       fill_in "user[picture]", with: user.picture
-      select("#{cat_1.name}", from: 'user[category_id]')
+      # select("#{cat_1.name}", from: 'user[category_id]')
 
       click_on "Create Account!"
 
