@@ -1,4 +1,18 @@
 .navbar {
   background-color: white;
-  border-bottom: none;
+  // border-bottom: none;
+  font-family: 'Muli', sans-serif;
+}
+
+.navbar-nav a:hover {
+  color: #c1bda8 !important;
+}
+
+.navbar-brand {
+  color: black !important;
+  font-size: 1.5em;
+}
+
+.navbar-brand:hover {
+  // color: black !important;
 }
