@@ -10,7 +10,6 @@ FactoryGirl.define do
     picture "https://images-na.ssl-images-amazon.com/images/M/MV5BNzEyNjNhYTktZWMwMC00Njk4LTg0OWYtZDNiODc0YzEwNDBhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_UY98_CR4,0,67,98_AL_.jpg"
     password "test"
     phone Faker::PhoneNumber.phone_number
-    category
   end
 
   sequence :email do |n|
