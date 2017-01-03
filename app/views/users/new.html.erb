@@ -1,0 +1,43 @@
+Create Your New Account and Help a Friend
+
+<%= form_for @user do |f| %>
+<%= f.label "First Name" %>
+<%= f.text_field :first_name, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Last Name" %>
+<%= f.text_field :last_name, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Street Address" %>
+<%= f.text_field :street_number, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Unit Number" %>
+<%= f.text_field :unit_number, placeholder: "If Applicable" %>
+
+<%= f.label "City" %>
+<%= f.text_field :city, placeholder: "**REQUIRED**" %>
+
+<%= f.label "State" %>
+<%= f.text_field :state, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Zip" %>
+<%= f.text_field :zip_code, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Phone Number" %>
+<%= f.text_field :phone, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Email" %>
+<%= f.text_field :email, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Password" %>
+<%= f.password_field :password, placeholder: "**REQUIRED**" %>
+
+<%= f.label "Password" %>
+<%= f.password_field :password_confirmation, placeholder: "**REQUIRED**" %>
+
+<%= f.label "A Picture of You" %>
+<%= f.text_field :picture, placeholder: "**REQUIRED**" %>
+
+<%= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
+
+<%= f.submit "Create Account!" %>
+<% end %>
