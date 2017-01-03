@@ -1,12 +1,3 @@
-# require 'rails_helper'
-#
-# As a logged in user
-# I can click on "Edit My Profile"
-# I am taken to the edit page
-# I can change my email to "test@test.com"
-# I click on "Update My Info"
-# and I am taken to my home page where I see my new email.
-
 require 'rails_helper'
 
 feature "As a logged in user" do
