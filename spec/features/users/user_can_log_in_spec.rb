@@ -8,7 +8,7 @@ describe "Registered user" do
 
       visit root_path
 
-      click_on  "Log In"
+      click_on  "LOG IN"
 
       expect(current_path).to eq(login_path)
 
@@ -26,7 +26,7 @@ describe "Registered user" do
 
       visit root_path
 
-      click_on  "Log In"
+      click_on  "LOG IN"
 
       expect(current_path).to eq(login_path)
 

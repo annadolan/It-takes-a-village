@@ -6,7 +6,7 @@ describe "User can log out" do
 
     visit root_path
 
-    click_on "Log In"
+    click_on "LOG IN"
 
     fill_in "session[email]", with: user.email
     fill_in "session[password]", with: user.password
@@ -14,12 +14,12 @@ describe "User can log out" do
     click_on "Login"
 
     visit user_path(user)
-    expect(page).to have_content("Log Out")
+    expect(page).to have_content("LOG OUT")
 
-    click_on "Log Out"
+    click_on "LOG OUT"
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("Sign Up")
-    expect(page).to have_content("Log In")
+    expect(page).to have_content("SIGN UP")
+    expect(page).to have_content("LOG IN")
   end
 end
