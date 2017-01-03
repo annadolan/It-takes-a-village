@@ -9,9 +9,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      flash[:success] = "Successfully created an account!"
       redirect_to user_path(@user)
     else
       @categories = Category.all
+      flash[:error] = "Something went wrong. Please try again."
       render :new
     end
   end
@@ -34,8 +36,7 @@ class UsersController < ApplicationController
                                  :email,
                                  :password,
                                  :password_confirmation,
-                                 :picture,
-                                 :category_id)
+                                 :picture)
   end
 
 end
