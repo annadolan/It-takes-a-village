@@ -29,11 +29,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.save
+    if @user.update_attributes(user_params)
       flash[:success] = "#{@user.first_name} account updated!"
       redirect_to user_path(@user)
     else
-      flash[:error] = "Account didn't update. Try again."
+      flash.now[:error] = "Account didn't update. Try again."
       render :edit
     end
   end
