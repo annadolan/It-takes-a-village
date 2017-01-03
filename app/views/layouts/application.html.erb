@@ -5,19 +5,18 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
 </head>
-  <% if current_user.nil?  %>
-    <%= link_to "Log In", login_path %> | <%= link_to "Sign Up", new_user_path %>
-  <% else %>
-    <%= link_to "Log Out", logout_path %>
-  <% end %>
 
 <body>
+
   <% flash.each do |type, message| %>
         <div class="alert alert-<%= type %>"><%= message %></div>
       <% end %>
-      
+
+  <%= render partial: "layouts/navbar" %>
+
   <%= yield %>
 </body>
 
