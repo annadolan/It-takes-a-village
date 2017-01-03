@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  belongs_to :category
+  # belongs_to :category
 
   validates_confirmation_of :password
 
@@ -13,8 +13,7 @@ class User < ApplicationRecord
             :zip_code,
             :email,
             :picture,
-            :phone,
-            :category_id, presence: true
+            :phone, presence: true
 
   validates :email, uniqueness: true
 
