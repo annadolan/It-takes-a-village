@@ -17,6 +17,10 @@
  @import "landing.scss";
  @import "form.scss";
 
- body {
-   padding-top: 100px;
+.every-page {
+   padding-top: 65px;
  }
+
+.extra-pad {
+  padding-top: 25px;
+}
