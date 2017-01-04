@@ -1,0 +1,40 @@
+.form-title {
+  font-weight: bold;
+  font-family: "Muli";
+ }
+
+.login-page {
+  background-color: #f5f5f5;
+}
+.form-link a{
+  color: #64686d;
+  font-weight: bold;
+}
+
+.form-link a:hover{
+  color: #aeb3ba;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-items {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-pad {
+  padding-bottom: 20px;
+}
+
+.submit-button {
+  color: white;
+  background-color: #777;
+  border-color: #777;
+}
+
+.submit-button:hover {
+  color: white;
+  background-color: #c1bda8;
+  border-color: #c1bda8;
+}
