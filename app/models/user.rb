@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
 
+  geocoded_by :full_street_address
+  after_validation :geocode
+
   # belongs_to :category
 
   validates_confirmation_of :password
@@ -16,5 +19,9 @@ class User < ApplicationRecord
             :phone, presence: true
 
   validates :email, uniqueness: true
+
+  def full_street_address
+    "#{street_number}, #{city}, #{state}, #{zip_code}"
+  end
 
 end
