@@ -23,7 +23,7 @@ describe "Visit new uer path" do
       fill_in "user[picture]", with: user.picture
       # select("#{cat_1.name}", from: 'user[category_id]')
 
-      click_on "Create Account!"
+      click_on "Create Account"
 
       expect(current_path).to eq(user_path(User.first))
       expect(page).to have_content("Hey #{user.first_name}")
@@ -49,9 +49,9 @@ describe "Visit new uer path" do
       fill_in "user[picture]", with: user.picture
       # select("#{cat_1.name}", from: 'user[category_id]')
 
-      click_on "Create Account!"
+      click_on "Create Account"
 
-      expect(page).to have_content("Create Your New Account and Help a Friend")
+      expect(page).to have_content("Create a new account")
     end
   end
 end

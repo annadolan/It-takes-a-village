@@ -11,7 +11,7 @@ describe "Visit root page" do
       click_on "SIGN UP"
 
       expect(current_path).to eq(new_user_path)
-      expect(page).to have_content("Create Your New Account and Help a Friend")
+      expect(page).to have_content("Create a new account")
     end
   end
 end
