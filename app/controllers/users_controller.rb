@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-
+    # @hash = Gmaps4rails.build_markers(@user) do |user, marker|
+    #   marker.lat user.zip_code
+    #   # marker.lng user.longitude
+    # end
   end
 
   def new
