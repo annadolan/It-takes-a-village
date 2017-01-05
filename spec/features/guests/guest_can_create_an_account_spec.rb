@@ -25,7 +25,7 @@ describe "Visit new user path" do
       fill_in "user[phone]", with: user.phone
       fill_in "user[picture]", with: user.picture
 
-      click_on "Create Account"
+      click_on "Submit"
 
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content("Welcome #{user.first_name}")
