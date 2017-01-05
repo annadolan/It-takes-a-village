@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :task do
-    event nil
-    user nil
-    category nil
+    event
+    user
+    category 
     name "MyString"
     date "MyString"
     time "MyString"
