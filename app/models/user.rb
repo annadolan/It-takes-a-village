@@ -13,13 +13,7 @@ class User < ApplicationRecord
 
   validates :first_name,
             :last_name,
-            :street_number,
-            :city,
-            :state,
-            :zip_code,
-            :email,
-            :picture,
-            :phone, presence: true
+            :email, presence: true
 
   validates :email, uniqueness: true
 

@@ -15,8 +15,8 @@ feature "As a logged in user" do
     fill_in "user[password_confirmation]", with: "test"
     click_button "Update Account"
 
-    expect(current_path).to eq(user_path(user))
-    expect(page).to have_content("#{user.first_name} account updated!")
+    expect(current_path).to eq(dashboard_path)
+    expect(page).to have_content("#{user.first_name}'s account updated!")
   end
 
   scenario "I cannot edit my account information without my password" do

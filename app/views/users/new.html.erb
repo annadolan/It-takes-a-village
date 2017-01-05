@@ -1,4 +1,4 @@
-<script type="text/javascript" src="js/emailvalidation.js"></script>
+<%= javascript_include_tag('emailvalidation.js') %>
 <body class="login-page">
   <div class="container extra-pad">
     <div class ="row">
@@ -18,25 +18,7 @@
                 <div class="form-group">
                   <%= f.text_field :last_name, class: "form-control login-items", placeholder: "Last Name", id: "Last Name" %>
                 </div>
-                <div class="form-group">
-                  <%= f.text_field :street_number, class: "form-control login-items", placeholder: "Street Address", id: "Street Address" %>
-                </div>
-                <div class="form-group">
-                  <%= f.text_field :unit_number, class: "form-control login-items", placeholder: "Unit Number", id: "Unit Number" %>
-                </div>
-                <div class="form-group">
-                  <%= f.text_field :city, class: "form-control login-items", placeholder: "City", id: "City" %>
-                </div>
-                <div class="form-group">
-                  <%= f.text_field :state, class: "form-control login-items", placeholder: "State", id: "State" %>
-                </div>
-                <div class="form-group">
-                  <%= f.text_field :zip_code, class: "form-control login-items", placeholder: "Zip", id: "Zip" %>
-                </div>
-                <div class="form-group">
-                  <%= f.text_field number_to_phone(:phone), class: "form-control login-items", placeholder: "Phone number", id: "Phone" %>
-                  <%#= f.text_field :phone, placeholder: "**REQUIRED**" %>
-                </div>
+
                 <div class="form-group">
                   <%= f.text_field :email, class: "form-control login-items", placeholder: "Email", id: "Email" %>
                 </div>
@@ -46,9 +28,7 @@
                 <div class="form-group">
                   <%= f.password_field :password_confirmation, class: "form-control login-items", placeholder: "Confirm Password", id: "Password Confirmation" %>
                 </div>
-                <div class="form-group">
-                  <%= f.text_field :picture, class: "form-control login-items", placeholder: "Picture", id: "Picture" %>
-                </div>
+
 
                 <%#= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
                 <button type="submit" class="btn btn-default submit-button login-items" id="submitnewbutton">Create Account</button></p>
