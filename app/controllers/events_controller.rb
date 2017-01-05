@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def new
+    @categories = Category.all
 
   end
 
