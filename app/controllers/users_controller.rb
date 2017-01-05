@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :info]
 
   def show
     @hash = Gmaps4rails.build_markers(@user) do |user, marker|
@@ -25,12 +25,16 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Successfully created an account!"
-      redirect_to user_path(@user)
+      redirect_to info_path(@user)
     else
       @categories = Category.all
       flash[:error] = "Something went wrong. Please try again."
       render :new
     end
+  end
+
+  def info
+
   end
 
   def edit
@@ -62,7 +66,6 @@ class UsersController < ApplicationController
                                    :password,
                                    :password_confirmation,
                                    :picture)
-      #took out category_id here, will have to add in when we put this functionality back in
     end
 
     def set_user

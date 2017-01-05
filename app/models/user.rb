@@ -7,14 +7,13 @@ class User < ApplicationRecord
   has_many :tasks
 
   geocoded_by :full_street_address
-  after_validation :geocode
+  after_update :geocode
 
   validates_confirmation_of :password
 
   validates :first_name,
             :last_name,
-            :email,
-            :phone, presence: true
+            :email, presence: true
 
   validates :email, uniqueness: true
 
