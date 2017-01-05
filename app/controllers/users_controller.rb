@@ -13,11 +13,11 @@ class UsersController < ApplicationController
       #   "height" => 32
       #   })
     end
-    @
   end
 
   def new
     @user = User.new
+    @categories = Category.all
   end
 
   def create
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
     end
 
     def set_user
-      @user = current_user
+      @user = User.find(params[:id])
     end
 
 end
