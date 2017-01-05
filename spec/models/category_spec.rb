@@ -1,17 +1,26 @@
-# require 'rails_helper'
-#
-# RSpec.describe Category, type: :model do
-#
-#   context "Validations" do
-#     it { should validate_presence_of(:name)}
-#   end
-#
-#   context "Relationships" do
-#     it { should have_many(:users)}
-#   end
-#
-#   context "Uniqueness" do
-#     it { should validate_uniqueness_of(:name)}
-#   end
-#
-# end
+require 'rails_helper'
+
+RSpec.describe Category, type: :model do
+  describe "validations" do
+    context "invalid attributes" do
+      it "is invalid without name" do
+        category = Category.new
+        expect(category).to be_invalid
+      end
+    end
+
+    context "valid attributes" do
+      it "is valid with all attributes" do
+        category = Category.new(name: "Babysitting")
+        expect(category).to be_valid
+      end
+    end
+    
+    context "relationships" do
+      it "has many tasks" do
+        category = create(:category)
+        expect(category).to respond_to(:tasks)
+      end
+    end
+  end
+end

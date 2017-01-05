@@ -1,10 +1,13 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :events, through: :user_events
+  has_many :roles, through: :user_events
+  has_many :user_events
+  has_many :tasks
+
   geocoded_by :full_street_address
   after_validation :geocode
-
-  # belongs_to :category
 
   validates_confirmation_of :password
 
