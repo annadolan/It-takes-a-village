@@ -16,8 +16,8 @@ describe "Registered user" do
       fill_in "session[password]", with: user.password
       click_on "Login"
 
-      expect(current_path).to eq(user_path(user))
-      expect(page).to have_content("Hey #{user.first_name}")
+      expect(current_path).to eq(dashboard_path)
+      expect(page).to have_content("Welcome #{user.first_name}")
     end
 
     scenario "can see a log in link and can log into their account" do

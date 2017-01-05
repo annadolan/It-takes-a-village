@@ -22,8 +22,8 @@ describe "Visit new uer path" do
 
       click_on "Create Account"
 
-      expect(current_path).to eq(user_path(User.first))
-      expect(page).to have_content("Hey #{user.first_name}")
+      expect(current_path).to eq(dashboard_path)
+      expect(page).to have_content("Welcome #{user.first_name}")
     end
 
     scenario "Cannot sign up without all required info" do
