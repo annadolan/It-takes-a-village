@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  get '/dashboard', to: 'dashboard#show'
+
+  resources :events, only: [:new, :create, :show]
+
 end
