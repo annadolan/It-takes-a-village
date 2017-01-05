@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :category do
+  factory :event do
     name "MyString"
   end
 end
