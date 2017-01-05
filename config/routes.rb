@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
 
+  resources :events, only: [:new, :create, :show]
+
 end

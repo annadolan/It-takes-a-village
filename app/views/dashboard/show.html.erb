@@ -1,12 +1,17 @@
 <div class="container">
   <h2>Welcome <%= current_user.first_name %></h2>
-  
+
   <h4>Here are your current events:</h4>
 
   <% @presenter.events.each do |event| %>
-    <h5><%= event.name %></h5>
+    <h5><%= link_to event.name, event_path(event) %></h5>
     <% event.roles.each do |role| %>
       </p>Your role is: <%= role.name %></p>
       <% end %>
   <% end %>
+  <hr>
+
+  <h4>Create a new event <%= link_to "here.", new_event_path %>
+  <hr>
+  <%= render partial: "map" %>
 </div>

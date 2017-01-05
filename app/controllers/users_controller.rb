@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       #   "height" => 32
       #   })
     end
+
   end
 
   def new
