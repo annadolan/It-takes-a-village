@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :user_events
   has_many :events, through: :user_events
   has_many :roles, through: :user_events
-  has_many :user_events
   has_many :tasks
 
   geocoded_by :full_street_address

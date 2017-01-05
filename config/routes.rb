@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get 'users/:id/info', to: 'users#info', as: 'info'
 
+  get '/dashboard', to: 'dashboard#show'
+
+  resources :events, only: [:new, :create, :show]
+
 end
