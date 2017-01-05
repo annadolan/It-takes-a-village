@@ -50,7 +50,8 @@
                   <%= f.text_field :picture, class: "form-control login-items", placeholder: "Picture", id: "Picture" %>
                 </div>
 
-                <%#= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
+                <%#= f.collection_select :role_ids, @roles,:id,:name, include_blank: "Select your role" %>
+
                 <button type="submit" class="btn btn-default submit-button login-items" id="submitnewbutton">Create Account</button></p>
               <% end %>
               </div>
