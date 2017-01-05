@@ -8,12 +8,14 @@ RSpec.describe Category, type: :model do
         expect(category).to be_invalid
       end
     end
+
     context "valid attributes" do
       it "is valid with all attributes" do
         category = Category.new(name: "Babysitting")
         expect(category).to be_valid
       end
     end
+    
     context "relationships" do
       it "has many tasks" do
         category = create(:category)
