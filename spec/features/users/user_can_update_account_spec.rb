@@ -16,7 +16,7 @@ feature "As a logged in user" do
     click_button "Update Account"
 
     expect(current_path).to eq(user_path(user))
-    expect(page).to have_content("#{user.first_name} account updated!")
+    expect(page).to have_content("#{user.first_name}'s account updated!")
   end
 
   scenario "I cannot edit my account information without my password" do
