@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "#{@user.first_name} account updated!"
+      flash[:success] = "#{@user.first_name}'s account updated!"
       redirect_to user_path(@user)
     else
       flash.now[:error] = "Account didn't update. Try again."
