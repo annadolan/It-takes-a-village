@@ -29,7 +29,7 @@ describe "Visit new uer path" do
       expect(page).to have_content("Hey #{user.first_name}")
     end
 
-    scenario "Must enter required info or is shown sign up page again" do
+    scenario "Cannot sign up without all required info" do
 
       # cat_1, cat_2 = create_list(:category, 2)
       user = build(:user)
@@ -42,8 +42,6 @@ describe "Visit new uer path" do
       fill_in "user[unit_number]", with: "45"
       fill_in "user[city]", with: user.city
       fill_in "user[state]", with: user.state
-      fill_in "user[email]", with: user.email
-      fill_in "user[phone]", with: user.phone
       fill_in "user[password]", with: user.password
       fill_in "user[password_confirmation]", with: user.password
       fill_in "user[picture]", with: user.picture
