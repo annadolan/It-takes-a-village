@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @categories = Category.all
   end
 
   def create
@@ -66,7 +65,7 @@ class UsersController < ApplicationController
     end
 
     def set_user
-      @user = User.find(params[:id])
+      @user = current_user
     end
 
 end
