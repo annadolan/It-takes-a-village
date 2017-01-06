@@ -1,0 +1,13 @@
+<div class="container">
+<p> Don’t worry. We’re going to get through this together, one step at a time. Let’s start with what you need. Select as many of the general below categories as you’d like. We’ll get to specifics in a minute.</p>
+
+
+<ul>
+  <% @categories.each do |category| %>
+      <li>
+        <%= check_box_tag 'category_ids[]', category.id -%>
+        <%= h category.name -%>
+      </li>
+  <% end %>
+</ul>
+</div>

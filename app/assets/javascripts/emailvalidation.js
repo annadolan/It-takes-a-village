@@ -2,10 +2,10 @@ $(document).ready(function(e) {
   $('#submitnewbutton').click(function() {
   var sEmail = $('#Email').val();
   // Checking Empty Fields
-  if ($.trim(sEmail).length == 0 || $("#fname").val()=="" || $("#lname").val()=="") {
-  alert('All fields are mandatory');
-  e.preventDefault();
-  }
+  // if ($.trim(sEmail).length == 0 || $("#fname").val()=="" || $("#lname").val()=="") {
+  // alert('All fields are mandatory');
+  // e.preventDefault();
+  // }
   if (validateEmail(sEmail)) {
   // alert('Nice!! your Email is valid, now you can continue..');
   }
