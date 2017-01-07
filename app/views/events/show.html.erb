@@ -1,0 +1,12 @@
+event show page
+
+calendar
+
+<%= month_calendar events: @tasks, :start_day => :monday do |date, tasks| %>
+  <%= date %>
+  <% tasks.each do |task| %>
+   <div>
+     <%= task.name %>, at: <%= task.time %>
+   </div>
+ <% end %>
+<% end %>
