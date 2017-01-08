@@ -13,5 +13,6 @@ feature "As a logged in user" do
     expect(page).to have_content(user.events.first.name)
     expect(page).to have_content("Your events")
     expect(page).to have_content("Create a new event")
+
   end
 end
