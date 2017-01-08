@@ -22,8 +22,8 @@
   <h4><%= current_user.first_name %>'s events:</h4>
 
   <% @presenter.user_events.each do |user_event| %>
-    <h5 class="dash-link"><%= link_to user_event.event.name, event_path(user_event.event) %></h5>
-  </p>Your role is: <%= user_event.role.name %></p>
+    <p><%= link_to user_event.event.name, event_path(user_event.event), class: "btn btn-default submit-button" %></p>
+  <!-- </p>Your role is: <%= user_event.role.name %></p> -->
   <% end %>
 <hr>
   <h4 class="dash-link"><%= link_to "Create a new event", new_event_path %></h4>
