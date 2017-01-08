@@ -29,3 +29,12 @@
 body {
   font-family: "Muli";
 }
+
+.btn-danger {
+  border-color: #d9534f;
+}
+
+.btn-danger:hover {
+  border-color: #cc767d;
+  background-color: #cc767d;
+}
