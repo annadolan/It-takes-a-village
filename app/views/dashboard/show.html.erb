@@ -22,11 +22,11 @@
   <h4>Here are your current events:</h4>
 
   <% @presenter.user_events.each do |user_event| %>
-    <h5><%= link_to user_event.event.name, event_path(user_event.event) %></h5>
+    <h5 class="dash-link"><%= link_to user_event.event.name, event_path(user_event.event) %></h5>
   </p>Your role is: <%= user_event.role.name %></p>
   <% end %>
-
-  <h4>Create a new event <%= link_to "here.", new_event_path %>
+<hr>
+  <h4 class="dash-link"><%= link_to "Create a new event", new_event_path %></h4>
     <hr>
 
 
