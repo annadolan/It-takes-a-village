@@ -7,7 +7,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "IT TAKES A VILLAGE", root_path, class: "navbar-brand" %>
+      <% if current_user %>
+        <%= link_to "IT TAKES A VILLAGE", dashboard_path, class: "navbar-brand" %>
+      <% else %>
+        <%= link_to "IT TAKES A VILLAGE", root_path, class: "navbar-brand" %>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
