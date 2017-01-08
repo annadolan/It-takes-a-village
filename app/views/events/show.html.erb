@@ -1,6 +1,7 @@
-event show page
-
-calendar
+<div class ="container">
+<h2>Calendar for: <%= @parent.first_name %> <%= @parent.last_name %></h2>
+<h5><%= @event.name %></h5>
+<p>Hey, <%= current_user.first_name %>! Thanks so much for pitching in. Let’s take a look at <%= @parent.first_name %> calendar and list of needs. Where can you help? </p>
 
 <%= month_calendar events: @tasks, :start_day => :monday do |date, tasks| %>
   <%= date %>
@@ -10,3 +11,4 @@ calendar
    </div>
  <% end %>
 <% end %>
+</div>
