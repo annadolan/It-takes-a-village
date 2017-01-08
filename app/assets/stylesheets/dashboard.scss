@@ -27,6 +27,7 @@
   height: 30px;
   width: 30px;
   float: right;
+  margin-right: 20px;
 }
 
 .dash-size {
@@ -39,4 +40,9 @@
 
 .bg-panel {
   background-color: white !important;
+}
+
+.img-thumbnail {
+  max-height: 200px;
+  max-width: auto;
 }
