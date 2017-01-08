@@ -10,14 +10,17 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    if current_user.@events.
+    # right now user sees same event page regardless of role, need to fix that
 
-    this = current_user.events.joins(:roles).where("roles.name = 'Villager'")
-    tasks = []
-    this.each do |event|
-      tasks << event.tasks
+    # if current_user.events.joins(:roles).where("roles.name = 'New Parent'")
+    # else current_user.events.joins(:roles).where("roles.name = 'Villager'")
+
+    villager_events = current_user.events.joins(:roles).where("roles.name = 'Villager'")
+    villager_tasks = []
+    villager_events.each do |event|
+      villager_tasks << event.tasks
     end
-    @tasks = tasks.first
+    @villager_tasks = villager_tasks.first
     parent_id = @event.users.first.id
     @parent = User.find(parent_id)
   end
