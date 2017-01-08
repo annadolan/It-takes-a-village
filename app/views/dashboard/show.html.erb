@@ -8,12 +8,12 @@
 </div>
 <div class="panel-body bottom-pad">
   <p><%= image_tag current_user.avatar.url(:medium) %></p>
-  <hr>
+  <br>
 
-<div class="form-inline"><%= simple_form_for current_user, html: { class: 'form-group'}, url: user_path(current_user), :method => :PUT do |form| %>
+<!-- <div class="form-inline"><%= simple_form_for current_user, html: { class: 'form-group'}, url: user_path(current_user), :method => :PUT do |form| %>
   <%= form.input :avatar, as: :file, label: 'Upload a new profile picture!' %>
   <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></button>
-<% end %></div>
+<% end %></div> -->
 </div>
 </div>
 
