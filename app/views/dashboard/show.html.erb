@@ -3,36 +3,35 @@
   <div class ="row text-center">
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading bg-panel">
+
   <h2>Welcome <%= current_user.first_name %>! <%= link_to(image_tag('settings.png', class: "settings"), edit_user_path(current_user)) %></h2>
-</div>
+
 <div class="panel-body bottom-pad">
-  <p><%= image_tag current_user.avatar.url(:medium) %></p>
+  <p><%= link_to(image_tag(current_user.avatar.url(:medium), class:"img-thumbnail"), current_user.avatar.url(:original)) %></p>
   <br>
 
-<!-- <div class="form-inline"><%= simple_form_for current_user, html: { class: 'form-group'}, url: user_path(current_user), :method => :PUT do |form| %>
-  <%= form.input :avatar, as: :file, label: 'Upload a new profile picture!' %>
-  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></button>
-<% end %></div> -->
+  <% if !current_user.user_events.empty? %>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default submit-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Your events
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <% @presenter.user_events.each do |user_event| %>
+      <li><%= link_to "#{user_event.event.name}", event_path(user_event.event) %></li>
+      <% end %>
+    </div>
+  </ul>
+  <% end %>
+  <div class="btn">
+    <%= link_to "Create a new event", new_event_path, class: "btn btn-danger", type: "button" %>
+  </div>
 </div>
 </div>
 
 </div>
 <div class="col-md-6">
-  <div class="panel panel-default top-pad">
-    <% if !current_user.user_events.empty? %>
-      <h3>Your events</h3>
-      <br>
-      <% @presenter.user_events.each do |user_event| %>
-        <p><%= link_to user_event.event.name, event_path(user_event.event), class: "btn btn-default submit-button dash-size" %></p>
-        <!-- </p>Your role is: <%= user_event.role.name %></p> -->
-      <% end %>
-
-
-    <% end %>
-  <%= link_to "Create a new event", new_event_path, class: "btn btn-danger dash-size" %>
-    <hr>
-
+  <div class="panel panel-default">
 
   <%= render partial: "map" %>
 </div>
