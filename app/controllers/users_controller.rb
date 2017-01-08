@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
     else
       @categories = Category.all
-      flash[:warning] = "Something went wrong. Please try again."
+      flash[:danger] = "Something went wrong. Please try again."
       render :new
     end
   end
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       flash[:success] = "#{@user.first_name}'s account updated!"
       redirect_to dashboard_path
     else
-      flash.now[:warning] = "Account didn't update. Try again."
+      flash.now[:danger] = "Account didn't update. Try again."
       render :edit
     end
   end
