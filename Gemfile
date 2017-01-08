@@ -20,6 +20,7 @@ gem 'gmaps4rails'
 gem 'figaro'
 gem 'geocoder'
 gem "paperclip", "~> 5.0.0"
+gem 'simple_form'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
