@@ -1,6 +1,24 @@
-<div class="container">
-  <h2>Welcome <%= current_user.first_name %></h2>
+<div class="container extra-pad">
+  <div class ="row text-center">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+  <h2>Welcome <%= current_user.first_name %>!</h2>
+</div>
+<div class="panel-body">
+  <p><%= image_tag current_user.avatar.url(:medium) %></p>
+  <hr>
 
+<%= simple_form_for current_user, html: { class: 'form-inline'}, url: user_path(current_user), :method => :PUT do |form| %>
+  <p><%= form.input :avatar, as: :file, label: 'Upload a new profile picture!' %>
+  <button type="submit" class="btn btn-danger">Upload!</button></p>
+<% end %>
+</div>
+</div>
+
+</div>
+<div class="col-md-6">
+  <div class="panel panel-default">
   <h4>Here are your current events:</h4>
 
   <% @presenter.events.each do |event| %>
@@ -11,7 +29,11 @@
   <% end %>
 
   <h4>Create a new event <%= link_to "here.", new_event_path %>
+    <hr>
 
 
   <%= render partial: "map" %>
+</div>
+</div>
+</div>
 </div>

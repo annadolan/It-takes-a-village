@@ -23,7 +23,6 @@ describe "Visit new user path" do
       fill_in "user[state]", with: user.state
       fill_in "user[zip_code]", with: user.zip_code
       fill_in "user[phone]", with: user.phone
-      fill_in "user[picture]", with: user.picture
 
       click_on "Submit"
 
