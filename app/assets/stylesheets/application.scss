@@ -16,6 +16,7 @@
  @import "navbar.scss";
  @import "landing.scss";
  @import "form.scss";
+ @import "dashboard.scss";
 
 .every-page {
    padding-top: 65px;
@@ -23,4 +24,17 @@
 
 .extra-pad {
   padding-top: 25px;
+}
+
+body {
+  font-family: "Muli";
+}
+
+.btn-danger {
+  border-color: #d9534f;
+}
+
+.btn-danger:hover {
+  border-color: #cc767d;
+  background-color: #cc767d;
 }
