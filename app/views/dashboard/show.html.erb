@@ -21,18 +21,22 @@
 <div class="col-md-6">
   <div class="panel panel-default top-pad">
     <% if !current_user.user_events.empty? %>
-      <h3>Your events</h3>
-      <br>
+    <div class="btn-group">
+    <button type="button" class="btn btn-default submit-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Your events
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
       <% @presenter.user_events.each do |user_event| %>
-        <p><%= link_to user_event.event.name, event_path(user_event.event), class: "btn btn-default submit-button dash-size" %></p>
-        <!-- </p>Your role is: <%= user_event.role.name %></p> -->
+        <li><%= link_to user_event.event.name, event_path(user_event.event) %></li>
       <% end %>
-
-
+    </div>
+    </ul>
     <% end %>
-  <%= link_to "Create a new event", new_event_path, class: "btn btn-danger dash-size" %>
-    <hr>
-
+    <div class="btn">
+  <%= link_to "Create a new event", new_event_path, class: "btn btn-danger", type: "button" %>
+</div>
+<hr>
 
   <%= render partial: "map" %>
 </div>
