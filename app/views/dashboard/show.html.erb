@@ -7,7 +7,7 @@
   <h2>Welcome <%= current_user.first_name %>! <%= link_to(image_tag('settings.png', class: "settings"), edit_user_path(current_user)) %></h2>
 
 <div class="panel-body bottom-pad">
-  <p><%= image_tag(current_user.avatar.url(:medium), class:"img-thumbnail") %></p>
+  <p><%= link_to(image_tag(current_user.avatar.url(:medium), class:"img-thumbnail"), current_user.avatar.url(:original)) %></p>
   <br>
 
   <% if !current_user.user_events.empty? %>
@@ -18,7 +18,7 @@
     </button>
     <ul class="dropdown-menu">
       <% @presenter.user_events.each do |user_event| %>
-      <li><%= link_to user_event.event.name, event_path(user_event.event) %></li>
+      <li><%= link_to "#{user_event.event.name}", event_path(user_event.event) %></li>
       <% end %>
     </div>
   </ul>
