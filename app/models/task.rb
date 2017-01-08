@@ -6,4 +6,9 @@ class Task < ApplicationRecord
   validates :name,
             :date,
             :time, presence: true
-end
+
+  def start_time
+    self.date.to_datetime
+  end
+  
+ end
