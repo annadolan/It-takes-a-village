@@ -1,44 +1,58 @@
+<%= javascript_include_tag('emailvalidation.js') %>
+<body class="login-page">
+  <div class="container extra-pad">
+    <div class ="row">
+      <div class = "text-center">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body less-padding">
+              <h3 class="form-title">Update your account</h3>
+            </div>
+            <div class="panel-footer panel-pad">
 
-Update your account
+                <div class="form-group">
+                  <%= form_for @user, class: "form-group" do |f| %>
+                    <div class="form-group">
+                      <%= f.text_field :first_name, class: "form-control login-items", placeholder: "First Name", id: "First Name" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_field :last_name, class: "form-control login-items", placeholder: "Last Name", id: "Last Name" %>
+                    </div>
 
-<%= form_for @user do |f| %>
-<%= f.label "First Name" %>
-<%= f.text_field :first_name, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Last Name" %>
-<%= f.text_field :last_name, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Street Address" %>
-<%= f.text_field :street_number, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Unit Number" %>
-<%= f.text_field :unit_number, placeholder: "If Applicable" %>
-
-<%= f.label "City" %>
-<%= f.text_field :city, placeholder: "**REQUIRED**" %>
-
-<%= f.label "State" %>
-<%= f.text_field :state, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Zip" %>
-<%= f.text_field :zip_code, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Phone Number" %>
-<%= f.text_field :phone, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Email" %>
-<%= f.text_field :email, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Password" %>
-<%= f.password_field :password, placeholder: "**REQUIRED**" %>
-
-<%= f.label "Password" %>
-<%= f.password_field :password_confirmation, placeholder: "**REQUIRED**" %>
-
-<%= f.label "A Picture of You" %>
-<%= f.text_field :picture, placeholder: "**REQUIRED**" %>
-
-<%#= f.collection_select :category_id, @categories,:id,:name, include_blank: true %>
-
-<%= f.submit "Update Account" %>
-<% end %>
+                    <div class="form-group">
+                      <%= f.text_field :street_number, class: "form-control login-items", placeholder: "Street Address", id: "Street Address" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_field :unit_number, class: "form-control login-items", placeholder: "Unit Number", id: "Unit Number" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_field :city, class: "form-control login-items", placeholder: "City", id: "City" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_field :state, class: "form-control login-items", placeholder: "State", id: "State" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_field :zip_code, class: "form-control login-items", placeholder: "Zip", id: "Zip" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_field number_to_phone(:phone), class: "form-control login-items", placeholder: "Phone number", id: "Phone" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_field :email, class: "form-control login-items", placeholder: "Email", id: "Email" %>
+                    </div>
+                    <div class="form-group input">
+                      <p>Set new profile picture:</p>
+                      <%= f.file_field :avatar %>
+                    </div>
+                    <button type="submit" class="btn btn-default submit-button login-items">Update Account</button></p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </div>
+        </div>
+</body>

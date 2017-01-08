@@ -1,17 +1,41 @@
-<div class="container">
-  <h2>Welcome <%= current_user.first_name %></h2>
+<body class="dashboard">
+<div class="container extra-pad">
+  <div class ="row text-center">
+    <div class="col-md-6">
+      <div class="panel panel-default">
 
-  <h4>Here are your current events:</h4>
+  <h2>Welcome <%= current_user.first_name %>! <%= link_to(image_tag('settings.png', class: "settings"), edit_user_path(current_user)) %></h2>
 
-  <% @presenter.events.each do |event| %>
-    <h5><%= link_to event.name, event_path(event) %></h5>
-    <% event.roles.each do |role| %>
-      </p>Your role is: <%= role.name %></p>
+<div class="panel-body bottom-pad">
+  <p><%= link_to(image_tag(current_user.avatar.url(:medium), class:"img-thumbnail"), current_user.avatar.url(:original)) %></p>
+  <br>
+
+  <% if !current_user.user_events.empty? %>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default submit-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Your events
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <% @presenter.user_events.each do |user_event| %>
+      <li><%= link_to "#{user_event.event.name}", event_path(user_event.event) %></li>
       <% end %>
+    </div>
+  </ul>
   <% end %>
+  <div class="btn">
+    <%= link_to "Create a new event", new_event_path, class: "btn btn-danger", type: "button" %>
+  </div>
+</div>
+</div>
 
-  <h4>Create a new event <%= link_to "here.", new_event_path %>
-
+</div>
+<div class="col-md-6">
+  <div class="panel panel-default">
 
   <%= render partial: "map" %>
 </div>
+</div>
+</div>
+</div>
+</body>

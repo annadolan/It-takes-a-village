@@ -19,6 +19,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'gmaps4rails'
 gem 'figaro'
 gem 'geocoder'
+gem "simple_calendar", "~> 2.0"
+gem "paperclip", "~> 5.0.0"
+gem 'simple_form'
+gem 'aws-sdk', '~> 2.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

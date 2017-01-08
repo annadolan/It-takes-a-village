@@ -1,8 +1,9 @@
 class DashboardPresenter
 
-  attr_reader :events, :hash
+  attr_reader :user_events, :events, :hash
 
   def initialize(user)
+    @user_events = user.user_events
     @events = user.events
     @hash = make_map_hash(user)
   end
