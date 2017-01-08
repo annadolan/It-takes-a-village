@@ -1,5 +1,6 @@
 <div class="container">
   <h2>Welcome <%= current_user.first_name %></h2>
+  <p><%= image_tag current_user.avatar.url(:medium) %></p>
 
   <h4>Here are your current events:</h4>
 

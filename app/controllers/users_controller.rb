@@ -65,7 +65,8 @@ class UsersController < ApplicationController
                                    :email,
                                    :password,
                                    :password_confirmation,
-                                   :picture)
+                                   :picture,
+                                   :avatar)
     end
 
     def set_user
