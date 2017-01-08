@@ -8,13 +8,11 @@
 }
 .form-link a{
   color: #64686d;
-  // font-weight: bold;
 }
 
 .form-link a:hover{
   color: #c1bda8;
   text-decoration: none;
-  // font-weight: bold;
 }
 
 .login-items {
@@ -42,4 +40,10 @@
 .less-padding {
   padding-top: 2px;
   padding-bottom: 8px;
+}
+
+.input {
+  position: relative;
+  margin-left: 150px;
+  margin-right: 150px;
 }

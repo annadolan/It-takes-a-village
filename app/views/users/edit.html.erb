@@ -13,7 +13,7 @@
             <div class="panel-footer panel-pad">
 
                 <div class="form-group">
-                  <%= simple_form_for @user, class: "form-group" do |f| %>
+                  <%= form_for @user, class: "form-group" do |f| %>
                     <div class="form-group">
                       <%= f.text_field :first_name, class: "form-control login-items", placeholder: "First Name", id: "First Name" %>
                     </div>
@@ -42,8 +42,9 @@
                     <div class="form-group">
                       <%= f.text_field :email, class: "form-control login-items", placeholder: "Email", id: "Email" %>
                     </div>
-                    <div class="form-group">
-                    <%= f.input :avatar, as: :file, label: 'Upload a new profile picture!' %>
+                    <div class="form-group input">
+                      <p>Set new profile picture:</p>
+                      <%= f.file_field :avatar %>
                     </div>
                     <button type="submit" class="btn btn-default submit-button login-items">Update Account</button></p>
                   <% end %>
