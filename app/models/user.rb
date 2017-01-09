@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :roles, through: :user_events
   has_many :tasks
 
-  before_validation :generate_slug
+  after_validation :generate_slug
 
   geocoded_by :full_street_address
   after_validation :geocode
@@ -28,7 +28,8 @@ class User < ApplicationRecord
   end
 
   def generate_slug
-    self.slug = [first_name.parameterize, last_name.parameterize, id].join("-")
+    random_string = SecureRandom.hex
+    self.slug = [first_name.parameterize, last_name.parameterize, random_string].join("-")
   end
 
 end
