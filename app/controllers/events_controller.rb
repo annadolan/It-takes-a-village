@@ -11,9 +11,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @presenter = EventPresenter.new(current_user)
-    parent_id = @event.users.first.id
-    @parent = User.find(parent_id)
+    @presenter = EventPresenter.new(current_user, @event)
   end
 
   private
