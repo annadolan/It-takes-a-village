@@ -12,21 +12,17 @@
             </div>
             <div class="panel-footer panel-pad">
               <%= form_for @user, class: "form-group" do |f| %>
-                <div class="form-group">
-                  <%= f.text_field :street_number, class: "form-control login-items", placeholder: "Street Address", id: "Street Address" %>
+                <div class="form-inline">
+                  <%= f.text_field :street_number, class: "form-control split-form-street", placeholder: "Street Address", id: "Street Address" %>
+                  <%= f.text_field :unit_number, class: "form-control split-form-unit", placeholder: "Unit", id: "Unit Number" %>
                 </div>
-                <div class="form-group">
-                  <%= f.text_field :unit_number, class: "form-control login-items", placeholder: "Unit Number", id: "Unit Number" %>
+                <br>
+                <div class="form-inline">
+                  <%= f.text_field :city, class: "form-control split-form-city", placeholder: "City", id: "City" %>
+                  <%= f.text_field :state, class: "form-control split-form-state", placeholder: "State", id: "State" %>
+                  <%= f.text_field :zip_code, class: "form-control split-form-zip", placeholder: "Zip", id: "Zip" %>
                 </div>
-                <div class="form-group">
-                  <%= f.text_field :city, class: "form-control login-items", placeholder: "City", id: "City" %>
-                </div>
-                <div class="form-group">
-                  <%= f.text_field :state, class: "form-control login-items", placeholder: "State", id: "State" %>
-                </div>
-                <div class="form-group">
-                  <%= f.text_field :zip_code, class: "form-control login-items", placeholder: "Zip", id: "Zip" %>
-                </div>
+                <br>
                 <div class="form-group">
                   <%= f.text_field number_to_phone(:phone), class: "form-control login-items", placeholder: "Phone number", id: "Phone" %>
                 </div>
