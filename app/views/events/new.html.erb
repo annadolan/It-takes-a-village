@@ -1,13 +1,22 @@
 <div class="container">
 <p> Don’t worry. We’re going to get through this together, one step at a time. Let’s start with what you need. Select as many of the general below categories as you’d like. We’ll get to specifics in a minute.</p>
 
-<ul>
-<% @categories.each do |category| %>
-  <li>
-    <%= check_box_tag 'category_ids[]', category.id %>
-    <%= category.name %></span>
-  </li>
-  <% end %>
-<%= submit_tag "Next Step", method: :post, controller: :events, method: :create %>
-</ul>
+
+<%= form_for @event do |f|  %>
+
+<%= f.label "Name Your Event" %>
+<%= f.text_field :name %>
+
+<div class="field">
+<%= f.label "Categories" %><br>
+<%= f.collection_check_boxes :category_ids, @categories, :id, :name do |b| %>
+  <div class="collection-check-box">
+    <%= b.check_box  %>
+    <%= b.label %>
+  </div>
+<% end %>
+
+<%= f.submit %>
+<% end %>
+
 </div>

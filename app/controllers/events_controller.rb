@@ -4,10 +4,12 @@ class EventsController < ApplicationController
 
   def new
     @categories = Category.all
-
+    @event = Event.new
   end
 
   def create
+    @event = Event.create(event_params)
+    
   end
 
   def show
@@ -18,6 +20,10 @@ class EventsController < ApplicationController
 
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def event_params
+      params.require(:event).permit(:name, category_ids:[])
     end
 
 end
