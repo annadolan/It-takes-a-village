@@ -79,4 +79,11 @@ RSpec.describe Task, type: :model do
       end
     end
   end
+
+  describe "#start_time" do
+    it "it returns start time of task" do
+      task = create(:task, date: "January 10, 2017")
+      expect(task.start_time).to eq("Tue, 10 Jan 2017 00:00:00.000000000 +0000")
+    end
+  end
 end
