@@ -5,7 +5,7 @@
 <% @categories.each do |category| %>
   <li>
     <%= check_box_tag 'category_ids[]', category.id %>
-    <%= category.name %></span>
+    <p id="<%= category.name %>"> <%= category.name %></p>
   </li>
   <% end %>
 <%= submit_tag "Next Step", method: :post, controller: :events, method: :create %>
