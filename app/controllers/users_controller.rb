@@ -3,15 +3,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :info]
 
   def show
-    @hash = Gmaps4rails.build_markers(@user) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-      marker.json({:id => user.id})
-      # marker.picture({
-      #   "url" => "/pin.png",
-      #   "width" => 32,
-      #   "height" => 32
-      #   })
+    if @user = User.find_by(slug: params[:user])
+      @user.set_private_boards(current_user)
+    else
+      flash[:failure] = "This user does not exist"
+      redirect_to root_path
     end
   end
 
