@@ -11,8 +11,8 @@ describe "As a logged in user" do
 
     click_on "Create a new event"
 
-    expect(path). to eq(new_event_path)
-    
+    expect(current_path). to eq(new_event_path)
+
 
   end
 end

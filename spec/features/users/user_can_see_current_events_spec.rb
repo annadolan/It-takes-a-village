@@ -5,7 +5,7 @@ feature "As a logged in user" do
     user = create(:user)
     event = create(:event)
     role = create(:role)
-    user.user_events.create(event_id: 1, role_id: 1)
+    user.user_events.create(event_id: event.id, role_id: role.id)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit dashboard_path
