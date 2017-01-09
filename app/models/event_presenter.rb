@@ -1,10 +1,11 @@
 class EventPresenter
 
-  attr_reader :villager_tasks, :parent
+  attr_reader :villager_tasks, :parent, :categories
 
   def initialize(user, event)
     @villager_tasks = find_villager_tasks(user)
     @parent = find_parent(event)
+    @categories = Category.all
   end
 
   def find_villager_tasks(user)
