@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   resources :users
 
-
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
@@ -14,5 +12,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
 
   resources :events, only: [:new, :create, :show]
+
+  get '/:user', to: 'users#show', as: 'show_user'
 
 end

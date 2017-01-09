@@ -38,7 +38,7 @@
             <ul class="dropdown-menu">
               <li><%= link_to "DASHBOARD", dashboard_path %></li>
               <li><%= link_to "UPDATE ACCOUNT", edit_user_path(current_user) %></li>
-              <li><%= link_to "PUBLIC PROFILE", "#" %>
+              <li><%= link_to "PUBLIC PROFILE", show_user_path(current_user.slug) %>
             </ul>
           </li>
           <li> <%= link_to "LOG OUT", logout_path %>

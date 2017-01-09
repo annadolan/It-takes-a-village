@@ -4,6 +4,7 @@ describe "User can log out" do
   scenario "A logged in user can log out" do
     user = create(:user)
 
+
     visit root_path
 
     click_on "LOG IN"
@@ -13,7 +14,7 @@ describe "User can log out" do
 
     click_on "Login"
 
-    visit user_path(user)
+    expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("LOG OUT")
 
     click_on "LOG OUT"
