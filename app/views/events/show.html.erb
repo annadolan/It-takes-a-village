@@ -16,7 +16,9 @@
 <% end %>
 </div>
   <div class="col-md-6">
-    <%= @parent.first_name %> Needs:
+    <h4><%= @parent.first_name %> Needs...</h4>
+    <%= select_tag "category", options_from_collection_for_select(Category.all, "id", "name"),  { :include_blank => true , :class => "product_select"} %>
+
   </div>
 </div>
 
