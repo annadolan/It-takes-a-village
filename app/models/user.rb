@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
   def generate_slug
-    self.slug = [id, name.parameterize].join("-")
+    self.slug = [first_name.parameterize, last_name.parameterize, id].join("-")
   end
 
 end

@@ -3,12 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :info]
 
   def show
-    if @user = User.find_by(slug: params[:user])
-      @user.set_private_boards(current_user)
-    else
-      flash[:failure] = "This user does not exist"
-      redirect_to root_path
-    end
+    @user = User.find_by(slug: params[:user])
   end
 
   def new
