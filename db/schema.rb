@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20170109025123) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events_categories", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "event_id"
+    t.index ["category_id"], name: "index_events_categories_on_category_id", using: :btree
+    t.index ["event_id"], name: "index_events_categories_on_event_id", using: :btree
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -80,6 +87,8 @@ ActiveRecord::Schema.define(version: 20170109025123) do
     t.string   "slug"
   end
 
+  add_foreign_key "events_categories", "categories"
+  add_foreign_key "events_categories", "events"
   add_foreign_key "tasks", "categories"
   add_foreign_key "tasks", "events"
   add_foreign_key "tasks", "users"
