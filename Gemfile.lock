@@ -52,6 +52,7 @@ GEM
       aws-sdk-core (= 2.6.44)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
+    bootstrap-multiselect_rails (0.9.5)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -256,6 +257,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk (~> 2.3)
   bcrypt (~> 3.1.7)
+  bootstrap-multiselect_rails (~> 0.9.4)
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara
