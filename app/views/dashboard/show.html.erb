@@ -10,7 +10,7 @@
   <p><%= image_tag current_user.avatar.url(:medium), class:"img-thumbnail" %></p>
   <br>
 
-  <% if !current_user.user_events.empty? %>
+  <% if current_user.has_events? %>
   <div class="btn-group">
     <button type="button" class="btn btn-default submit-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Your events

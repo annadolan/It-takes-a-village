@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :info]
 
   def show
-    @user = User.find_by(slug: params[:user])
+    if current_user
+      @user = User.find_by(slug: params[:user])
+    else
+      render :file => "/public/404"
+    end
   end
 
   def new
