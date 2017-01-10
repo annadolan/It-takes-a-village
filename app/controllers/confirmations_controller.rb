@@ -4,8 +4,11 @@ class ConfirmationsController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(phone: params[:user][:phone])
-    ConfirmationSender.send_confirmation_to(@user)
+    if @user = User.find_by(phone: params[:user][:phone])
+      ConfirmationSender.send_confirmation_to(@user)
+    else
+      flash.now[:error] = "Couldn't find your phone number."
+    end 
   end
 
   def update
