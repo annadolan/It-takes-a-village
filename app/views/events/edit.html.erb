@@ -3,8 +3,8 @@
 </div>
 
   <%= form_for @event do |f|%>
-    <% @event.categories.each do |category| %>
-      <p><%= f.collection_select :task_ids, category.tasks.all, :id, :name, {prompt: category.name}, {multiple: true} %></p>
+  <% @categories.each do |category| %>
+      <%= f.collection_select :task_ids, category.tasks.all, :id, :name, {prompt: category.name}, {multiple: true} %>
   <% end %>
   <%= f.submit %>
 <% end %>
