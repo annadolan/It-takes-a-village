@@ -1,0 +1,7 @@
+<div class="container">
+<p>Perfect! Now let’s get to the specifics. For each category you selected in step 1, please provide any and all details so your friends and family can pitch in on exactly what you need! Let’s figure out what you need when it comes to meals, chores, and pet care</p>
+</div>
+
+<% @event.categories.each do |category| %>
+<%= select_tag (category.tasks) %>
+<% end %>
