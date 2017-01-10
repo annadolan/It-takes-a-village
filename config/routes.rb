@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get '/confirm' => 'confirmations#new', as: :user_confirmation
+  post '/confirm' => 'confirmations#edit'
+  patch '/confirm' => 'confirmations#update', as: :user_confirm_update
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
@@ -11,7 +15,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
 
-  resources :events, only: [:new, :create, :show, :edit, :update]
+  resources :events
 
   get '/:user', to: 'users#show', as: 'show_user'
 
