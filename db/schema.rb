@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110183621) do
+ActiveRecord::Schema.define(version: 20170110222732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170110183621) do
   create_table "events_categories", force: :cascade do |t|
     t.integer "category_id"
     t.integer "event_id"
+    t.text    "comment"
     t.index ["category_id"], name: "index_events_categories_on_category_id", using: :btree
     t.index ["event_id"], name: "index_events_categories_on_event_id", using: :btree
   end
