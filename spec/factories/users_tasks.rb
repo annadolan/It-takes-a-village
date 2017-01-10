@@ -1,6 +1,6 @@
 # FactoryGirl.define do
 #   factory :users_task do
-#     references
-#     references
+#     user
+#     event
 #   end
 # end
