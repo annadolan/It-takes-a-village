@@ -14,5 +14,14 @@
 //= require jquery_ujs
 //= require underscore
 //= require gmaps/google
+//= require moment
+//= require fullcalendar
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+    })
+
+})
