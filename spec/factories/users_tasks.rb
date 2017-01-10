@@ -1,6 +1,6 @@
-# FactoryGirl.define do
-#   factory :users_task do
-#     user
-#     event
-#   end
-# end
+FactoryGirl.define do
+  factory :users_task do
+    user
+    task
+  end
+end
