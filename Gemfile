@@ -26,6 +26,7 @@ gem 'aws-sdk', '~> 2.3'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'twilio-ruby'
+gem 'bootstrap-multiselect_rails', '~> 0.9.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

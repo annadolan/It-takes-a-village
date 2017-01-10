@@ -1,11 +1,23 @@
-<div class="container">
-<p>Perfect! Now let’s get to the specifics. For each category you selected in step 1, please provide any and all details so your friends and family can pitch in on exactly what you need! Let’s figure out what you need when it comes to meals, chores, and pet care</p>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.multiselect').multiselect();
+    });
+</script>
 
+<div class="container extra-pad">
+<p>Perfect! Now let’s get to the specifics. For each category you selected in step 1, please provide any and all details so your friends and family can pitch in on exactly what you need! Let’s figure out what you need when it comes to meals, chores, and pet care</p>
+<hr>
+<div class="row">
   <%= form_for @event do |f|%>
-  <% @event.categories.each do |category| %>
-      <%= f.collection_select :task_ids, category.tasks.all, :id, :name, {prompt: category.name}, :multiple => true %>
-  <% end %>
-  <%= f.submit %>
+    <% @event.categories.each do |category| %>
+    <div class="col-md-3">
+      <%= category.name %><br><br>
+      <%= f.select :task_ids, options_from_collection_for_select(category.tasks.map { |task| task }, :id, :name, category.name), {}, {class: 'multiselect', multiple: true} %>
+    </div>
+    <% end %>
+  </div>
+  <br>
+  <div class="row text-center"><button type="submit" class="btn btn-default submit-button">Add selected tasks</button></p></div>
 <% end %>
 
 </div>
@@ -16,4 +28,5 @@
 
 <div class="container">
 <div id="calendar"></div>
+
 </div>
