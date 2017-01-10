@@ -7,7 +7,7 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(category_id: category.id, event_id: event.id)
+        task = Task.new(category_id: category.id)
         expect(task).to be_invalid
       end
 
@@ -15,7 +15,7 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(name: "Dogsit", event_id: event.id)
+        task = Task.new(name: "Dogsit")
         expect(task).to be_invalid
       end
     end
@@ -25,17 +25,12 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(name: "Dogsit", category_id: category.id, event_id: event.id)
+        task = Task.new(name: "Dogsit", category_id: category.id)
         expect(task).to be_valid
       end
     end
 
     context "relationships" do
-
-      it "belongs to an event" do
-        task = create(:task)
-        expect(task).to respond_to(:event)
-      end
 
       it "belongs to a category" do
         task = create(:task)
