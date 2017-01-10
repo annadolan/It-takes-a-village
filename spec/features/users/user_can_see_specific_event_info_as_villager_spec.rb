@@ -14,6 +14,6 @@ feature "As a logged in villager" do
 
     expect(page).to have_content("Calendar")
     expect(page).to have_content(event.name)
-    expect(page).to have_content("January 2017")
+    expect(page).to have_content(event.users.first.first_name)
   end
 end

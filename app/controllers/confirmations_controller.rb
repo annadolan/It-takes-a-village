@@ -1,7 +1,6 @@
 class ConfirmationsController < ApplicationController
 
   def new
-    # @user = User.find_by(phone: params[:user][:phone])
   end
 
   def edit
