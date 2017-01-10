@@ -17,13 +17,17 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    @tasks = @event.tasks
+    redirect_to :back
   end
 
   def get_tasks
-    @event = Event.find(params[:id])
-    @tasks = @event.tasks
-    render :text => tasks.to_json
+    @event = current_user.events.first
+    tasks = []
+    @event.task.each do |task|
+       tasks << {:id => task.id, :title => "#{task.taskable.try(:name)} : #{task.task}", :start => "#{task.created_at}",:end => "#{task.updated_at}" }
+     end
+   render :text => tasks.to_json
+
   end
 
   def edit
