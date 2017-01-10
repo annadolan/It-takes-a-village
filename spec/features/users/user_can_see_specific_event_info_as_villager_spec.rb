@@ -6,7 +6,7 @@ feature "As a logged in villager" do
     event = create(:event, id: 1)
     role = Role.create(id: 1, name: "Villager")
     user_event = user.user_events.create(event_id: 1, role_id: 1)
-    task = create(:task, date: "January 10, 2017")
+    task = create(:task)
     event.tasks << task
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

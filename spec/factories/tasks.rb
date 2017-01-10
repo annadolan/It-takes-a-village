@@ -3,7 +3,5 @@ FactoryGirl.define do
     event
     category
     name "MyString"
-    date "MyString"
-    time "MyString"
   end
 end

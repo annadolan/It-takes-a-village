@@ -2,10 +2,10 @@ class Task < ApplicationRecord
   belongs_to :event
   belongs_to :category
   has_many :users, through: :users_tasks
+  has_many :events, through: :events_tasks
+  has_many :events_tasks
 
-  validates :name,
-            :date,
-            :time, presence: true
+  validates :name, presence: true
 
   def start_time
     self.date.to_datetime

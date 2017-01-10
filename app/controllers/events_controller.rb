@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @categories = @event.categories 
+    @categories = @event.categories
   end
 
   def show
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:name, category_ids:[])
+      params.require(:event).permit(:name, category_ids:[], task_ids:[])
     end
 
 end
