@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
 
-  resources :events
+  resources :events do
+    get :get_tasks, on: :collection
+  end
 
   get '/:user', to: 'users#show', as: 'show_user'
 

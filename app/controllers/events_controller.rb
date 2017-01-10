@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   before_action :set_event, only: [:show, :edit, :update]
 
   def new
@@ -18,6 +17,13 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
+    @tasks = @event.tasks
+  end
+
+  def get_tasks
+    @event = Event.find(params[:id])
+    @tasks = @event.tasks
+    render :text => tasks.to_json
   end
 
   def edit
