@@ -7,31 +7,7 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(date: "11/25/17", time: "11:00am", category_id: category.id, event_id: event.id)
-        expect(task).to be_invalid
-      end
-
-      it "is invalid without date" do
-        category = create(:category)
-        user = create(:user)
-        event = create(:event)
-        task = Task.new(name: "Dogsit", time: "11:00am", category_id: category.id, event_id: event.id)
-        expect(task).to be_invalid
-      end
-
-      it "is invalid without time" do
-        category = create(:category)
-        user = create(:user)
-        event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", category_id: category.id, event_id: event.id)
-        expect(task).to be_invalid
-      end
-
-      it "is invalid without event id" do
-        category = create(:category)
-        user = create(:user)
-        event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", time: "11:00am", category_id: category.id)
+        task = Task.new(category_id: category.id)
         expect(task).to be_invalid
       end
 
@@ -39,7 +15,7 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", time: "11:00am", event_id: event.id)
+        task = Task.new(name: "Dogsit")
         expect(task).to be_invalid
       end
     end
@@ -49,29 +25,17 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", time: "11:00am", category_id: category.id, event_id: event.id)
+        task = Task.new(name: "Dogsit", category_id: category.id)
         expect(task).to be_valid
       end
     end
 
     context "relationships" do
 
-      it "belongs to an event" do
-        task = create(:task)
-        expect(task).to respond_to(:event)
-      end
-
       it "belongs to a category" do
         task = create(:task)
         expect(task).to respond_to(:category)
       end
-    end
-  end
-
-  describe "#start_time" do
-    it "it returns start time of task" do
-      task = create(:task, date: "January 10, 2017")
-      expect(task.start_time).to eq("Tue, 10 Jan 2017 00:00:00.000000000 +0000")
     end
   end
 end

@@ -61,7 +61,8 @@ class UsersController < ApplicationController
                                    :password,
                                    :password_confirmation,
                                    :picture,
-                                   :avatar)
+                                   :avatar,
+                                   task_ids:[])
     end
 
     def set_user
