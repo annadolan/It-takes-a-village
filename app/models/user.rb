@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :user_events
   has_many :events, through: :user_events
   has_many :roles, through: :user_events
-  has_many :tasks
+  has_many :tasks, through: :users_tasks
 
   after_validation :generate_slug
 
