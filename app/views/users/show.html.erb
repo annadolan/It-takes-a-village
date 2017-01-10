@@ -7,7 +7,7 @@
 <div class="panel-body bottom-pad">
 <p><%= @user.city %>, <%= @user.state %></p>
 <%= image_tag @user.avatar.url(:medium), class:"img-thumbnail" %>
-<p><% if !current_user.user_events.empty? %>
+<p><% if current_user.has_events? %>
 <div class="btn-group">
   <button type="button" class="btn btn-default submit-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <%= @user.first_name %>'s events

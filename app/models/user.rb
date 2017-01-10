@@ -32,4 +32,8 @@ class User < ApplicationRecord
     self.slug = [first_name.parameterize, last_name.parameterize, random_string].join("-")
   end
 
+  def has_events?
+    !user_events.empty?
+  end
+
 end
