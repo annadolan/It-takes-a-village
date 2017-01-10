@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: [:show, :edit]
 
   def new
     @categories = Category.all
@@ -13,6 +13,11 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_events << current_user.user_events.new(event: @event, role_id: params[:event][:user_event][:role_id])
     @event.save
+    redirect_to edit_event_path(@event)
+  end
+
+  def edit
+    @categories = @event.categories 
   end
 
   def show

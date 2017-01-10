@@ -18,10 +18,3 @@
 //= require fullcalendar
 //= require_tree .
 //= require bootstrap-sprockets
-
-$(document).ready(function() {
-
-    $('#calendar').fullCalendar({
-    })
-
-})

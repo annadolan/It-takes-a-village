@@ -9,6 +9,7 @@ class EventPresenter
   end
 
   def find_villager_tasks(user)
+
     villager_events = user.events.joins(:roles).where("roles.name = 'Villager'")
     villager_tasks = []
     villager_events.each do |event|

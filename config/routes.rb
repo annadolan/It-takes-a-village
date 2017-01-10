@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
 
-  resources :events, only: [:new, :create, :show]
+  resources :events, only: [:new, :create, :show, :edit, :update]
 
   get '/:user', to: 'users#show', as: 'show_user'
 
