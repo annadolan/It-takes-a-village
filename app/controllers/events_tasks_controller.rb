@@ -12,8 +12,7 @@ class EventsTasksController < ApplicationController
     @event_task.update(start_time: params["events_task"]["start_time"])
       if @event_task.save
       @meetings << @event_task
-      flash[:success] = "Time updated!"
-      redirect_to :back
+      flash.now[:success] = "Time updated!"
     end
   end
 
