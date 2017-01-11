@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a place for new moms, and other people in stressful times in their lives, to identify their needs to that their "village" can help them out. Moms can identify their needs, and friends and family can login to find out how they can help with those needs.
 
-Things you may want to cover:
 
-* Ruby version
+The live app can be accessed at https://ittakesavillage.herokuapp.com/
 
-* System dependencies
+To run locally:
+```
+git clone https://github.com/meganft/It-takes-a-village.git
+cd It-takes-a-village
+rake db:create db:migrate 
+rails s
+```
 
-* Configuration
+The test suite is uses `rspec` and `capybara`.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This app is written in Rails v5.0.0.1.
