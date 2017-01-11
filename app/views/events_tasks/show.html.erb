@@ -1,11 +1,17 @@
-<%= month_calendar events_tasks: @meetings do |date, meetings| %>
-  <%= date %>
-  <% meetings.each do |meeting| %>
+
+
+
+
+<%#= month_calendar events_tasks: @meetings do |date, meetings| %>
+<%# binding.pry %>
+  <%#= date %>
+  <%# meetings.each do |meeting| %>
     <div>
-      <%= meeting.id %>
+
+      <strong><%#= meeting.id %><strong>
     </div>
-  <% end %>
-<% end %>
+  <%# end %>
+<%# end %>
 
 <%#= month_calendar do |date| %>
   <%#= date %>

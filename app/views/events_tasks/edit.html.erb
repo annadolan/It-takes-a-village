@@ -2,18 +2,19 @@
 <div class="container">
 Last step: Let’s put these activities and requests on the calendar! Tell us the date and time you want these help with each of these tasks.
 
-<%= form_for :events_task, url: edit_event_patch_path, method: :patch do |f| %>
+<%= form_for :events_tasks, url: edit_event_patch_path, method: :patch do |f| %>
   <% @events_tasks.each do |event_task| %>
-  <%= Task.find(event_task.task.id).name %>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
-    <%= f.hidden_field :event_id, :value => @event.id %>
-    <%= f.hidden_field :event_task_id, :value => event_task.id %>
-  </div>
+    <%= fields_for "events_tasks[]", event_task do |u| %>
+    <%= Task.find(event_task.task.id).name %>
+    <div class="field">
+      <%= u.label :date %><br>
+      <%= u.text_field :date %>
+    </div>
+  <% end %>
 <% end %>
 <%= f.submit %>
 <% end %>
+
 
 <%= link_to "See the full calendar", events_tasks_path %>
 

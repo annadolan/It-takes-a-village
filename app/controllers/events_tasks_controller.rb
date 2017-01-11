@@ -3,26 +3,27 @@ class EventsTasksController < ApplicationController
   def edit
     @event = Event.find(params[:id])
     @events_tasks = @event.events_tasks
-    respond_to do |format|
-     format.html
-     format.js
-   end
    @meetings = []
   end
 
   def update
-    @event = Event.find(params["events_task"]["event_id"])
-    @event_task = EventsTask.find(params["events_task"]["event_task_id"])
-    @event_task.update(date: params["events_task"]["date"])
-      if @event_task.save
-      flash.now[:success] = "Time updated!"
-      redirect_to :back
+    params['events_tasks'].keys.each do |id|
+      @event_task = EventsTask.find(id.to_i)
+      @event_task.update_attributes(date: params['events_tasks'][id]["date"])
     end
+    flash[:success] = "Time updated!"
+    redirect_to :back
   end
 
   def show
     @event = Event.find(params[:id])
-    @meetings = @event.events_tasks.last
+    @meetings = @event.events_tasks
+
+    # @tasks = {}
+    # @event_tasks.each do |task|
+    #   @tasks[task.date] = [Task.find(task.task_id).name]
+    # end
+    # @tasks
   end
 
 end
