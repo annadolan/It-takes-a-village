@@ -9,7 +9,6 @@ feature "As a user who forgot my password" do
     click_on "Forgot your password?"
 
     expect(current_path).to eq(confirm_path)
-    expect(page).to have_button("Get Your Confirmation Code")
   end
 
   scenario "I cannot get code without correct phone number" do
