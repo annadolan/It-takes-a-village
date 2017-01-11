@@ -15,11 +15,21 @@ RSpec.describe Category, type: :model do
         expect(category).to be_valid
       end
     end
-    
+
     context "relationships" do
       it "has many tasks" do
         category = create(:category)
         expect(category).to respond_to(:tasks)
+      end
+
+      it "has many events categories" do
+        category = create(:category)
+        expect(category).to respond_to(:events_categories)
+      end
+
+      it "has many events" do
+        category = create(:category)
+        expect(category).to respond_to(:events)
       end
     end
   end

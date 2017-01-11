@@ -10,7 +10,7 @@
 <div class="row">
   <%= form_for @event do |f|%>
     <% @event.categories.each do |category| %>
-    <div class="col-md-3">
+    <div class="col-md-3", id="category-<%= category.id %>">
       <%= category.name %><br><br>
       <%= f.select :task_ids, options_from_collection_for_select(category.tasks.map { |task| task }, :id, :name, category.name), {}, {class: 'multiselect', multiple: true} %>
     </div>

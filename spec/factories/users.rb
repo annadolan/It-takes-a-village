@@ -9,7 +9,6 @@ FactoryGirl.define do
     email
     password "test"
     phone Faker::PhoneNumber.phone_number
-    # category
   end
 
   sequence :email do |n|

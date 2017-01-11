@@ -8,7 +8,7 @@ RSpec.describe Event, type: :model do
         expect(event).to be_invalid
       end
     end
-    
+
     context "valid attributes" do
       it "is valid with all attributes" do
         event = Event.new(name: "Baby time!")
@@ -35,6 +35,21 @@ RSpec.describe Event, type: :model do
       it "has many tasks" do
         event = create(:event)
         expect(event).to respond_to(:tasks)
+      end
+
+      it "has many events tasks" do
+        event = create(:event)
+        expect(event).to respond_to(:events_tasks)
+      end
+
+      it "has many events categories" do
+        event = create(:event)
+        expect(event).to respond_to(:events_categories)
+      end
+
+      it "has many categories" do
+        event = create(:event)
+        expect(event).to respond_to(:categories)
       end
     end
   end
