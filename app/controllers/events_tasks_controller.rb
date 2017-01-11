@@ -5,6 +5,7 @@ class EventsTasksController < ApplicationController
   end
 
   def create
+    binding.pry
   end
 
   def index
