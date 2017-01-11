@@ -7,8 +7,8 @@ class Task < ApplicationRecord
 
   validates :name, presence: true
 
-  def start_time
-    self.date.to_datetime
-  end
+  # def start_time
+  #   self.date.to_datetime
+  # end
 
  end

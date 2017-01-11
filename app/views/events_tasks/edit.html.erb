@@ -4,8 +4,8 @@
 Last step: Let’s put these activities and requests on the calendar! Drag and drop each onto the hour, day, week, or month you need the support.
 Last step: Let’s put these activities and requests on the calendar! Tell us the date and time you want these help with each of these tasks.
 
-<%= form_for :events_task, url: edit_event_patch_path, method: :patch do |f| %>
 <% @events_tasks.each do |event_task| %>
+<%= form_for :events_task, url: edit_event_patch_path, method: :patch do |f| %>
 <%= Task.find(event_task.task.id).name %>
 <div class="field">
   <%= f.label :start_time %><br>
@@ -17,15 +17,19 @@ Last step: Let’s put these activities and requests on the calendar! Tell us th
 <% end %>
 <% end %>
 
+<%#= link_to "See the final event page", parent %>
 
-<%#= month_calendar events: @event_task do |date, meetings| %>
-  <%#= date %>
-  <%# meetings.each do |meeting| %>
+<% if @meetings != nil %>
+<%= month_calendar events: @meetings do |date, meetings| %>
+  <%= date %>
+
+  <% meetings.each do |meeting| %>
     <div>
-      <%#= meeting.name %>
+      <%= meeting.name %>
     </div>
-<%# end %>
-<%# end %>
+  <% end %>
+<% end %>
+<% end %>
 
 </div>
 
