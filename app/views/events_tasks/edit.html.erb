@@ -15,16 +15,7 @@ Last step: Let’s put these activities and requests on the calendar! Tell us th
 <%= f.submit %>
 <% end %>
 
-<%#= month_calendar do |date| %>
-  <%#= date %>
-<%# end %>
-<%#= link_to "See the final event page", parent_calendar_path(@event) %>
+<%= link_to "See the full calendar", events_tasks_path %>
 
-<% if @meetings != nil %>
-<% render partial: "calendar" %>
-
-<% end %>
-
-</div>
 
 <!-- <div id="calendar"></div> -->
