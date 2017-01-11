@@ -15,4 +15,12 @@ RSpec.describe EventsTask, type: :model do
     end
   end
 
+  describe "#start_time" do
+    context "start time method" do
+      it "returns the start time of the event task" do
+        events_task = create(:events_task, date: "January 12, 2017")
+        expect(events_task.start_time.class).to eq(Date)
+      end
+    end
+  end
 end
