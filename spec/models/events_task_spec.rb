@@ -14,4 +14,5 @@ RSpec.describe EventsTask, type: :model do
       end
     end
   end
+
 end
