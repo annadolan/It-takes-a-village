@@ -13,6 +13,6 @@ rake db:create db:migrate
 rails s
 ```
 
-The test suite is uses `rspec` and `capybara`.
+The test suite uses `rspec` and `capybara`.
 
 This app is written in Rails v5.0.0.1.
