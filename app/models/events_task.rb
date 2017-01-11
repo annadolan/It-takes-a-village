@@ -3,7 +3,7 @@ class EventsTask < ApplicationRecord
   belongs_to :task
 
   def start_time
-    self.date.to_datetime
+    self.date.to_date
   end
 
 end

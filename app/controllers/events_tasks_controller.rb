@@ -3,7 +3,6 @@ class EventsTasksController < ApplicationController
   def edit
     @event = Event.find(params[:id])
     @events_tasks = @event.events_tasks
-   @meetings = []
   end
 
   def update
@@ -17,13 +16,7 @@ class EventsTasksController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @events_tasks = @event.events_tasks
-
-    # @tasks = {}
-    # @event_tasks.each do |task|
-    #   @tasks[task.date] = [Task.find(task.task_id).name]
-    # end
-    # @tasks
+    @meetings = @event.events_tasks
   end
 
 end
