@@ -36,6 +36,21 @@ RSpec.describe Task, type: :model do
         task = create(:task)
         expect(task).to respond_to(:category)
       end
+
+      it "has many users" do
+        task = create(:task)
+        expect(task).to respond_to(:users)
+      end
+
+      it "has many events" do
+        task = create(:task)
+        expect(task).to respond_to(:events)
+      end
+
+      it "has many events tasks" do
+        task = create(:task)
+        expect(task).to respond_to(:events_tasks)
+      end
     end
   end
 end

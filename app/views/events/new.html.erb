@@ -5,7 +5,7 @@
 <%= form_for @event do |f|  %>
 
 <p class="form-inline"><%= f.label "My event should be called" %>:
-<%= f.text_field :name, class: "form-control short", placeholder: "Event Name" %></p>
+<%= f.text_field :name, class: "form-control short", placeholder: "Event Name", id: "event-name" %></p>
 
 <%= f.fields_for @user_event do |u| %>
   <p class="form-group">
