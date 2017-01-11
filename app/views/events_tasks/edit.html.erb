@@ -6,12 +6,12 @@ Last step: Let’s put these activities and requests on the calendar! Tell us th
   <% @events_tasks.each do |event_task| %>
   <%= Task.find(event_task.task.id).name %>
   <div class="field">
-    <%= f.label :start_time %><br>
-    <%= f.text_field :start_time %>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
     <%= f.hidden_field :event_id, :value => @event.id %>
     <%= f.hidden_field :event_task_id, :value => event_task.id %>
   </div>
-  <% end %>
+<% end %>
 <%= f.submit %>
 <% end %>
 
