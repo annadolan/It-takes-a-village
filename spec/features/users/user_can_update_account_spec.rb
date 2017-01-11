@@ -4,11 +4,8 @@ feature "As a logged in user" do
   scenario "I can edit my account information" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    visit user_path(user)
 
-    click_on "Edit your account"
-
-    expect(current_path).to eq(edit_user_path(user))
+    visit edit_user_path(user)
 
     fill_in "user[email]", with: "newemail@email.com"
     click_button "Update Account"

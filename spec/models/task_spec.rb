@@ -7,39 +7,7 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(date: "11/25/17", time: "11:00am", category_id: category.id, event_id: event.id, user_id: user.id)
-        expect(task).to be_invalid
-      end
-
-      it "is invalid without date" do
-        category = create(:category)
-        user = create(:user)
-        event = create(:event)
-        task = Task.new(name: "Dogsit", time: "11:00am", category_id: category.id, event_id: event.id, user_id: user.id)
-        expect(task).to be_invalid
-      end
-
-      it "is invalid without time" do
-        category = create(:category)
-        user = create(:user)
-        event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", category_id: category.id, event_id: event.id, user_id: user.id)
-        expect(task).to be_invalid
-      end
-
-      it "is invalid without user id" do
-        category = create(:category)
-        user = create(:user)
-        event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", time: "11:00am", category_id: category.id, event_id: event.id)
-        expect(task).to be_invalid
-      end
-
-      it "is invalid without event id" do
-        category = create(:category)
-        user = create(:user)
-        event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", time: "11:00am", category_id: category.id, user_id: user.id)
+        task = Task.new(category_id: category.id)
         expect(task).to be_invalid
       end
 
@@ -47,7 +15,7 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", time: "11:00am", event_id: event.id, user_id: user.id)
+        task = Task.new(name: "Dogsit")
         expect(task).to be_invalid
       end
     end
@@ -57,21 +25,12 @@ RSpec.describe Task, type: :model do
         category = create(:category)
         user = create(:user)
         event = create(:event)
-        task = Task.new(name: "Dogsit", date: "11/25/17", time: "11:00am", category_id: category.id, event_id: event.id, user_id: user.id)
+        task = Task.new(name: "Dogsit", category_id: category.id)
         expect(task).to be_valid
       end
     end
 
     context "relationships" do
-      it "belongs to a user" do
-        task = create(:task)
-        expect(task).to respond_to(:user)
-      end
-
-      it "belongs to an event" do
-        task = create(:task)
-        expect(task).to respond_to(:event)
-      end
 
       it "belongs to a category" do
         task = create(:task)

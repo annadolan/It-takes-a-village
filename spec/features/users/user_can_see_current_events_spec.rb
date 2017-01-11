@@ -5,7 +5,7 @@ feature "As a logged in user" do
     user = create(:user)
     event = create(:event)
     role = create(:role)
-    user.user_events.create(event_id: 1, role_id: 1)
+    user.user_events.create(event_id: event.id, role_id: role.id)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit dashboard_path
@@ -13,5 +13,6 @@ feature "As a logged in user" do
     expect(page).to have_content(user.events.first.name)
     expect(page).to have_content("Your events")
     expect(page).to have_content("Create a new event")
+
   end
 end

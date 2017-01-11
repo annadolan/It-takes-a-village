@@ -3,15 +3,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :info]
 
   def show
-    @hash = Gmaps4rails.build_markers(@user) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-      marker.json({:id => user.id})
-      # marker.picture({
-      #   "url" => "/pin.png",
-      #   "width" => 32,
-      #   "height" => 32
-      #   })
+    if current_user
+      @user = User.find_by(slug: params[:user])
+    else
+      render :file => "/public/404"
     end
   end
 
@@ -66,7 +61,8 @@ class UsersController < ApplicationController
                                    :password,
                                    :password_confirmation,
                                    :picture,
-                                   :avatar)
+                                   :avatar,
+                                   task_ids:[])
     end
 
     def set_user

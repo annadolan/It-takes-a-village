@@ -1,31 +1,35 @@
 <div class ="container">
 
-<h2>Calendar for: <%= @parent.first_name %> <%= @parent.last_name %></h2>
+<h2>Calendar for: <%= @presenter.parent.first_name %> <%= @presenter.parent.last_name %></h2>
 <h5><%= @event.name %></h5>
-<p>Hey, <%= current_user.first_name %>! Thanks so much for pitching in. Let’s take a look at <%= @parent.first_name %> calendar and list of needs. Where can you help? </p>
+<p>Hey, <%= current_user.first_name %>! Thanks so much for pitching in. Let’s take a look at <%= @presenter.parent.first_name %> calendar and list of needs. Where can you help? </p>
 
 <div class="row">
   <div class="col-md-6">
-<%= month_calendar events: @villager_tasks, :start_day => :monday do |date, tasks| %>
-  <%= date %>
-  <% tasks.each do |task| %>
+
+    <div id="calendar"></div>
+<%#= month_calendar events: @presenter.villager_tasks, :start_day => :monday do |date, tasks| %>
+  <%#= date %>
+  <%# tasks.each do |task| %>
    <div>
-     <%= task.name %>, at: <%= task.time %>
+     <!-- <%#= task.name %>, at: <%#= task.time %> -->
    </div>
- <% end %>
-<% end %>
+ <%# #end %>
+<%# #end %>
 </div>
   <div class="col-md-6">
-    <%= @parent.first_name %> Needs:
+    <h4><%= @presenter.parent.first_name %> Needs...</h4>
+    <%= select_tag "category", options_from_collection_for_select(@presenter.categories, "id", "name"),  { :include_blank => true , :class => "product_select"} %>
+
   </div>
 </div>
 
 <h4> Your Tasks:</h4>
-<% @villager_tasks.each do |task| %>.
-<%= task.name %>
-<%= task.date %>
-<% task.time %>
-<% end %>
+<%# @presenter.villager_tasks.each do |task| %>
+<%#= task.name %>
+<%#= task.date %>
+<%# task.time %>
+<%# end %>
 
 <h4>Chat:</h4>
 </div>
