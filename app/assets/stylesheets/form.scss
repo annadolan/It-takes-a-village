@@ -75,3 +75,36 @@
 .short {
   width: 30% !important;
 }
+
+.second {
+  opacity: 0;
+}
+
+.third {
+  opacity: 0;
+}
+
+.last {
+  opacity: 0;
+}
+
+.second.show {
+  -webkit-transition: opacity 2.0s ease-in;
+  -moz-transition: opacity 2.0s ease-in;
+  transition: opacity 2.0s ease-in;
+                              opacity: 1;
+}
+
+.third.show {
+  -webkit-transition: opacity 2.0s ease-in;
+  -moz-transition: opacity 2.0s ease-in;
+  transition: opacity 2.0s ease-in;
+                              opacity: 1;
+}
+
+.last.show {
+  -webkit-transition: opacity 2.0s ease-in;
+  -moz-transition: opacity 2.0s ease-in;
+  transition: opacity 2.0s ease-in;
+                              opacity: 1;
+}
