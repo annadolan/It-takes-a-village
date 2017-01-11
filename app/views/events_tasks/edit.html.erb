@@ -17,10 +17,16 @@ Last step: Let’s put these activities and requests on the calendar! Tell us th
 <% end %>
 <% end %>
 
-<%#= month_calendar do |date| %>
-  <%#= date %>
-<%# end %>
-<div id="calendar"></div>
 
+<%#= month_calendar events: @event_task do |date, meetings| %>
+  <%#= date %>
+  <%# meetings.each do |meeting| %>
+    <div>
+      <%#= meeting.name %>
+    </div>
+<%# end %>
+<%# end %>
 
 </div>
+
+<!-- <div id="calendar"></div> -->
