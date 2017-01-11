@@ -1,6 +1,6 @@
 # README
 
-This application is a place for new moms, and other people in stressful times in their lives, to identify their needs to that their "village" can help them out. Moms can identify their needs, and friends and family can login to find out how they can help with those needs.
+This application is a place for new moms to identify their needs so that their "village" can help them out. Moms can login, catalogie their needs, and select a time and date.  Friends and family can then login to find out how they can help with those needs.
 
 
 The live app can be accessed at https://ittakesavillage.herokuapp.com/
