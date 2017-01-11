@@ -1,0 +1,23 @@
+
+<div class="container">
+
+Last step: Let’s put these activities and requests on the calendar! Drag and drop each onto the hour, day, week, or month you need the support.
+Last step: Let’s put these activities and requests on the calendar! Tell us the date and time you want these help with each of these tasks.
+<%= form_for :events_task do |f| %>
+<% @events_tasks.each do |event_task| %>
+<%#= Task.find(event_task.task.id).name %>
+<div class="field">
+  <%= f.label :start_time %><br>
+  <%= f.text_field :start_time %>
+</div>
+<% end %>
+<%= f.submit %>
+<% end %>
+
+<%#= month_calendar do |date| %>
+  <%#= date %>
+<%# end %>
+<div id="calendar"></div>
+
+
+</div>

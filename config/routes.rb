@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     get :get_tasks, on: :collection
   end
 
+  resources :events_tasks
+  # get '/events_tasks/:id/edit', to: 'events_tasks#edit', as: :edit_event_task_path
+  # post '/events_tasks', to: 'events_tasks#update'
+
   get '/:user', to: 'users#show', as: 'show_user'
 
 end

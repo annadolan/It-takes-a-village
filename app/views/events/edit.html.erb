@@ -25,6 +25,7 @@
 <% if @event.tasks != nil %>
 
 Last step: Let’s put these activities and requests on the calendar! Drag and drop each onto the hour, day, week, or month you need the support.
+Last step: Let’s put these activities and requests on the calendar! Tell us the date and time you want these help with each of these tasks.
 <% @event.tasks.each do |task| %>
 <p><%= task.name %></p>
 <% end %>

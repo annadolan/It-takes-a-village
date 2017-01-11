@@ -17,17 +17,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect_to :back
-  end
-
-  def get_tasks
-    @event = current_user.events.first
-    tasks = []
-    @event.task.each do |task|
-       tasks << {:id => task.id, :title => "#{task.taskable.try(:name)} : #{task.task}", :start => "#{task.created_at}",:end => "#{task.updated_at}" }
-     end
-   render :text => tasks.to_json
-
+    redirect_to edit_events_task_path(@event)
   end
 
   def edit
