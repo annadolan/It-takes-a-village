@@ -9,10 +9,17 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.user_events << current_user.user_events.new(event: @event, role_id: params[:event][:user_event][:role_id])
-    @event.save
-    redirect_to edit_event_path(@event)
+    user_event = current_user.user_events.create do |user_event|
+      event = Event.new(event_params)
+      user_event.event = event
+      user_event.role_id = params[:event][:user_event][:role_id]
+    end
+
+    @event = user_event.event
+    if @event.persisted?
+      redirect_to edit_event_path(@event)
+    else
+    end
   end
 
   def update

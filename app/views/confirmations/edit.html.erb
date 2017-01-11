@@ -1,14 +1,16 @@
+<div class="container text-center">
 <div class="row">
   <div class="form">
     <div class="col-md-4 col-md-offset-4">
-      <h3>Update Your Password:</h3>
-        <%= form_for @user, :url => user_confirm_update_path do |f| %>
-        <%= f.label "Verification Code:" %>
-        <%= f.password_field :verification_code %>
-        <%= f.label "New Password:" %>
-        <%= f.password_field :password %>
-        <%= f.submit "Update Password", class: "btn btn-primary" %>
+      <h4>Update Your Password:</h4>
+        <%= form_for @user, class: "form-group", :url => user_confirm_update_path do |f| %>
+        <%= f.password_field :verification_code, class: "form-control", style: "margin-left: auto; margin-right: auto", placeholder: "Verification Code" %>
+        <br>
+        <%= f.password_field :password, class: "form-control", style: "margin-left: auto; margin-right: auto", placeholder: "New Password" %>
+        <br>
+        <%= f.submit "Update Password", class: "btn btn-default submit-button" %>
       <% end %>
     </div>
   </div>
+</div>
 </div>
