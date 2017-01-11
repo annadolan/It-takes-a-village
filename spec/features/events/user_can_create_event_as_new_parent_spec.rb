@@ -23,7 +23,6 @@ describe "As a logged in user" do
 
     choose("event_user_event_role_id_#{role.id}")
 
-
     check("event_category_ids_#{categories.first.id}")
     check("event_category_ids_#{categories.last.id}")
 
@@ -39,10 +38,6 @@ describe "As a logged in user" do
       expect(page.find('.multiselect')[:multiple]).to be_truthy
     end
 
-
     expect(page).to have_button("Add selected tasks")
-
-
-
   end
 end
