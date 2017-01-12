@@ -27,6 +27,7 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'twilio-ruby'
 gem 'bootstrap-multiselect_rails', '~> 0.9.4'
+gem 'newrelic_rpm'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
