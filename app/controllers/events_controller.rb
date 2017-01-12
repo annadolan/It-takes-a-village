@@ -18,6 +18,8 @@ class EventsController < ApplicationController
     if @event.persisted?
       redirect_to edit_event_path(@event)
     else
+      render :new
+      flash.now[:danger] = "There was a problem creating your event, please try again."
     end
   end
 
