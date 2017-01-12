@@ -2,8 +2,9 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update]
 
   def new
-    @presenter = EventPresenter.new(current_user)
+    @categories = Category.all
     @event = Event.new
+    @roles = [Role.find_by(name: "Organizer"), Role.find_by(name: "New Parent")]
     @user_event = @event.user_events.new
   end
 
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @presenter = EventPresenter.new(current_user)
+    @presenter = EventPresenter.new(current_user, @event)
   end
 
   private
