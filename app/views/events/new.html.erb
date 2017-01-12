@@ -12,14 +12,14 @@
 <%= f.fields_for @user_event do |u| %>
   <p class="form-group second">
     <%= u.label "My role in this event is:" %><br>
-    <%= u.collection_radio_buttons :role_id, @roles, :id, :name do |u| %>
+    <%= u.collection_radio_buttons :role_id, @presenter.roles, :id, :name do |u| %>
     <%= u.radio_button %> <%= u.label %>
   <% end %></p>
 <% end %>
 
 <div class="field third">
 <%= f.label "I would like help with the following categories:" %><br>
-<%= f.collection_check_boxes :category_ids, @categories, :id, :name do |b| %>
+<%= f.collection_check_boxes :category_ids, @presenter.categories, :id, :name do |b| %>
   <div class="collection-check-box">
     <%= b.check_box  %>
     <%= b.label %>

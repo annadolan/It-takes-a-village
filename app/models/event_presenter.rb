@@ -1,15 +1,14 @@
 class EventPresenter
 
-  attr_reader :villager_tasks, :parent, :categories
+  attr_reader :villager_tasks, :parent, :categories, :roles
 
-  def initialize(user, event)
+  def initialize(user)
     @villager_tasks = find_villager_tasks(user)
-    @parent = find_parent(event)
     @categories = Category.all
+    @roles = [Role.find_by(name: "Organizer"), Role.find_by(name: "New Parent")]
   end
 
   def find_villager_tasks(user)
-
     villager_events = user.events.joins(:roles).where("roles.name = 'Villager'")
     villager_tasks = []
     villager_events.each do |event|
@@ -18,7 +17,7 @@ class EventPresenter
     @villager_tasks = villager_tasks.first
   end
 
-  def find_parent(event)
+  def find_parent
     parent_id = event.users.first.id
     @parent = User.find(parent_id)
   end
