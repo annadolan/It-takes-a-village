@@ -1,38 +1,36 @@
 <body class="dashboard">
-<div class="container extra-pad text-center">
-  <div class="row">
-    <div class="col-md-3">
+  <div class="container extra-pad text-center">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+          <div class="panel-body bottom-pad">
+            <p><%= @user.city %>, <%= @user.state %></p>
+            <%= image_tag @user.avatar.url(:medium), class:"img-thumbnail" %>
+            <p>
+              <% if @user.has_events? %>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default submit-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= @user.first_name %>'s events
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <% @user.user_events.each do |user_event| %>
+                  <li><%= link_to "#{user_event.event.name}", event_path(user_event.event) %></li>
+                  <% end %>
+                </p>
+              </div>
+            </ul>
+            <% else %>
+            <p>Invite <%= @user.first_name %> to join an event!</p>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-  <div class="panel panel-default">
-
-<h2><%= @user.first_name %> <%= @user.last_name %></h2>
-
-<div class="panel-body bottom-pad">
-<p><%= @user.city %>, <%= @user.state %></p>
-<%= image_tag @user.avatar.url(:medium), class:"img-thumbnail" %>
-<p>
-<% if @user.has_events? %>
-<div class="btn-group">
-  <button type="button" class="btn btn-default submit-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= @user.first_name %>'s events
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <% @user.user_events.each do |user_event| %>
-    <li><%= link_to "#{user_event.event.name}", event_path(user_event.event) %></li>
-    <% end %>
-  </p>
   </div>
-</ul>
-<% else %>
-<p>Invite <%= @user.first_name %> to join an event!</p>
-<% end %>
-</div>
-<div class="col-md-3">
-</div>
-</div>
-</div>
-</div>
-</div>
 </body>

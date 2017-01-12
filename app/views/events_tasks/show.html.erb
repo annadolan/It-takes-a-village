@@ -1,13 +1,12 @@
-<div class="container">
+<div class="container fade">
 <%= month_calendar events: @meetings do |date, meetings| %>
   <%= date %>
   <% meetings.each do |meeting| %>
-
     <div>
      <span style="background-color:" > <%= find_task_name(meeting) %></span>
     </div>
   <% end %>
 <% end %>
 
-<%= link_to "Edit these dates", edit_event_patch_path(@event) %>
+<%= link_to "Edit these tasks.", edit_events_task_path(@event) %>
 </div>

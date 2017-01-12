@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = "Successfully created an account!"
       redirect_to info_path(@user)
-
     else
       @categories = Category.all
       flash[:danger] = "Something went wrong. Please try again."

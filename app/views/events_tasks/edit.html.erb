@@ -4,21 +4,31 @@
       <div class="col-sm-3">
       </div>
       <div class="col-sm-6">
-
-<h3>Last step: Let’s put these activities and requests on the calendar! Tell us the date and time you want these help with each of these tasks.</h3>
-
-<div class="form-group">
-<%= form_for :events_tasks, url: edit_event_patch_path, method: :patch, class: "form-group" do |f| %>
-  <% @events_tasks.each do |event_task| %>
-    <%= fields_for "events_tasks[]", event_task do |u| %>
-    <p>Task name: <%= find_task_name(event_task)  %></p>
-    <p><%= u.label :date %>:<%= u.text_field :date %></p>
-  <% end %>
-<% end %>
-<%= f.submit "Update these dates" %>
-<% end %>
-</div>
-
-</div>
-</div>
+        <div class="panel-body less-padding">
+        </div>
+        <p>Last step: Let’s put these activities and requests on the calendar! Tell us the date and time you want these help with each of these tasks.</p>
+        <hr>
+        <div class="form-group fade">
+          <%= form_for :events_tasks, url: edit_event_patch_path, method: :patch, class: "form-group" do |f| %>
+          <div class="form-group">
+            <% @events_tasks.each do |event_task| %>
+            <%= fields_for "events_tasks[]", event_task do |u| %>
+            <div class="form-group">
+              <p><strong>Task name: <%= find_task_name(event_task) %></p></strong>
+            </div>
+            <div class="form-inline">
+              <p><%= u.text_field :date, class: "form-control short", placeholder: "Date"%></p>
+              <br>
+            </div>
+            <% end %>
+            <% end %>
+            <div class="add-tasks text-center"><button type="submit" class="btn btn-default submit-button">Update these dates</button></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+  </div>
 </div>

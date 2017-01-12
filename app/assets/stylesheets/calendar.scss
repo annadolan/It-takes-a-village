@@ -2,6 +2,8 @@
 
   .calendar-title {
     font-size: 24px;
+    text-align: center;
+    padding-left: 400px;
   }
   .next-month {}
 
@@ -23,8 +25,16 @@
 
   .start-date {}
 
+  .previous-month {
+    background-color: none;
+  }
+
   .prev-month { }
-  .next-month { }
+
+  .next-month-title {
+    background-color: none;
+    padding-left: 360px;
+  }
   .current-month {}
 
   .has-events { }

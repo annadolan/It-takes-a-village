@@ -3,11 +3,11 @@
 <div class="container extra-pad">
 <p> Don’t worry. We’re going to get through this together, one step at a time. Let’s start with what you need. Select as many of the general below categories as you’d like. We’ll get to specifics in a minute.</p>
 
-
 <%= form_for @event do |f|  %>
-
 <p class="form-inline"><%= f.label "My event should be called" %>:
-<%= f.text_field :name, class: "form-control short first", placeholder: "Event Name", id: "event-name" %></p>
+<%= f.text_field :name, class: "form-control short first", placeholder: "Event Name", id: "event-name" %>
+<div class="btn btn-default submit-button fade-out">Continue</div></p>
+
 
 <%= f.fields_for @user_event do |u| %>
   <p class="form-group second">
@@ -28,5 +28,4 @@
 <br>
 <button type="submit" class="btn btn-default submit-button last">Create Event</button>
 <% end %>
-
 </div>

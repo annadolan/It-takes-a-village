@@ -12,8 +12,12 @@ $(document).ready(function() {
   });
 
   $('.fade').addClass('show');
-  
+
   $('.fade').on('change', function(){
     $('.add-tasks').addClass('show');
+  })
+
+  $('.fade-out').on('click', function(){
+    $('.fade-out').addClass('hide');
   })
 });
