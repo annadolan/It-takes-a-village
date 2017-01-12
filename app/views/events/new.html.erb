@@ -5,7 +5,10 @@
 
 <%= form_for @event do |f|  %>
 <p class="form-inline"><%= f.label "My event should be called" %>:
-<%= f.text_field :name, class: "form-control short first", placeholder: "Event Name", id: "event-name" %></p>
+<%= f.text_field :name, class: "form-control short first", placeholder: "Event Name", id: "event-name" %>
+<div class="btn btn-default submit-button fade-out">Continue</div></p>
+
+
 <%= f.fields_for @user_event do |u| %>
   <p class="form-group second">
     <%= u.label "My role in this event is:" %><br>
