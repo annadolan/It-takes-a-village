@@ -14,7 +14,6 @@ class EventsController < ApplicationController
       user_event.event = event
       user_event.role_id = params[:event][:user_event][:role_id]
     end
-
     @event = user_event.event
     if @event.persisted?
       redirect_to edit_event_path(@event)
@@ -28,7 +27,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @categories = @event.categories
+
   end
 
   def show

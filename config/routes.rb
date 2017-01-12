@@ -15,9 +15,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
 
-  resources :events do
-    get :get_tasks, on: :collection
-  end
+  resources :events
 
   get '/events_tasks/:id/edit', to: 'events_tasks#edit', as: 'edit_events_task'
   patch '/events_tasks/:id', to: 'events_tasks#update', as: 'edit_event_patch'
