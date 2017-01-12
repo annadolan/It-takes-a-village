@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   before_action :set_event, only: [:show, :edit, :update]
 
   def new
@@ -25,6 +24,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
+    redirect_to edit_events_task_path(@event)
   end
 
   def edit
