@@ -10,4 +10,10 @@ $(document).ready(function() {
   $('.third').on('change', function(){
     $('.last').addClass('show');
   });
+
+  $('.fade').addClass('show');
+  
+  $('.fade').on('change', function(){
+    $('.add-tasks').addClass('show');
+  })
 });

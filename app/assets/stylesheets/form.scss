@@ -108,3 +108,25 @@
   transition: opacity 2.0s ease-in;
                               opacity: 1;
 }
+
+.fade {
+  opacity: 0;
+}
+
+.fade.show {
+  -webkit-transition: opacity 2.0s ease-in;
+  -moz-transition: opacity 2.0s ease-in;
+  transition: opacity 2.0s ease-in;
+                              opacity: 1;
+}
+
+.add-tasks {
+  opacity: 0;
+}
+
+.add-tasks.show {
+  -webkit-transition: opacity 2.0s ease-in;
+  -moz-transition: opacity 2.0s ease-in;
+  transition: opacity 2.0s ease-in;
+                              opacity: 1;
+}
